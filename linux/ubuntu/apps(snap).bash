@@ -1,6 +1,6 @@
 #!/bin/bash
 
-install snapd
+configuration_files_for_windowsinstall snapd
 snap install core
 snap install snap-store
 snap install skype
