@@ -1,0 +1,253 @@
+#!/bin/bash
+
+## Install TOR transport support for apt
+dpkg -s apt-transport-tor >& /dev/null || sudo apt install --assume-yes apt-transport-tor  
+## Install HTTPS ransport support for apt
+dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes apt-transport-https 
+## delete old format sources.list 
+sudo [ -f /etc/apt/sources.list ] && sudo rm -f /etc/apt/sources.list
+sudo [ -f /etc/apt/sources.list.d/official-package-repositories.list ] && \
+  sudo \rm -f /etc/apt/sources.list.d/official-package-repositories.list
+## Generate new format (deb822) sources file in /etc/apt/sources.list.d/
+sudo [ -f /etc/upstream-release/lsb-release ] && . /etc/upstream-release/lsb-release
+sudo cat > /etc/apt/sources.list.d/linuxmint.sources <<-EOF
+#! Linux Mint Official Repositories
+Name: $(lsb_release -sd) $(lsb_release -sc)
+Enabled: yes
+Types: deb 
+URIs: http://packages.linuxmint.com https://mirror.cyberbits.eu/linuxmint/packages
+Suites: $(lsb_release -sc)
+Components: main upstream import backport
+Architectures: $(dpkg --print-architecture)
+Signed-By: 
+ -----BEGIN PGP PUBLIC KEY BLOCK-----
+ .
+ mQINBFdEh9oBEAC2zKl1y2Kk973W9ZQvshDawC8Du/2Svl3T0jWxDRuVItEYCk6i
+ Mrln3yYUUZEXXiX3CYsEfSH90YkfNGNfKreUpOm0wWcwS2ZTHaHSZwbNWrb1TUyi
+ L4HeB2cVvqdRB457IMmtnQ5wwfUNOBqQWV6R6vET+zvQYl81bpJQ7TPUxPmNOqPI
+ fkkUrLBqxIKHEj/BuHEutQr5CdOvFkCaoEWFF7C8tK86j9xkAVM3yKOaizdYznqr
+ 4u/dbUhHpm3P3MDaVIpgDeR0kiJFcxeOF5XH3q32QqiDCeRminkYdhinnmtuyClK
+ kMEFfFZgvGAwUQhus+vQjHzhV6ikIBAt3dgo8yFQRI7jo8Ed50pCrfivTa0MxE/6
+ QUuolf1iL4CPpBjojNFiKxoHF3xrcNWL+In24sQYvHe43JfBiM/gMzMP1JxlbWaO
+ xNPYjSZb1hNedxsjAxxqvpijAEDDDA+neWivepNe9oo9sNjCfqb3TEZ+l8PjAH4V
+ LL9mkjPmFFhhui8PgJDv7VTRYH9MRHNB+PSTOCpHVGzWcaiL+biDmE1u6+WzxmSp
+ K2p9BwqFFyikc0WLtW28Zgwvh/u0bV/MZodomJNenYso6PWCIRUsPYqqHeNWEyPZ
+ YHRYpWG1xMdyMm5SEi8wMGvCzGFsc5McJ2yWxUYzMS7fTCHoWsZU4xKNfQARAQAB
+ tDZMaW51eCBNaW50IFJlcG9zaXRvcnkgU2lnbmluZyBLZXkgPHJvb3RAbGludXht
+ aW50LmNvbT6JAjcEEwEKACEFAldEh9oCGwMFCwkIBwMFFQoJCAsFFgIDAQACHgEC
+ F4AACgkQpmFhCUUbu/LUJA//cKLbe9tvewklceL9zaDFGABxrYgRcRVDBfwVdjwR
+ 2D3VvK5Zh6r8bWgG8yXfo0crAbY5utpBMQf7ilw1BCIiFt3NVnxTa+q87jVgAseE
+ aWYh81odCxXSlnF9gxIwP5ZE/1z16JHc+epcft77QqGPoKDWw3W27Dvqc6YZXwH3
+ PLOj71XYCQKJ/tyE7c2z8PN8VVgbUTSLfNgzwRVQrYgpY6pACv2nf5/Dv+DNW+Gy
+ Qn2y5rgLqKPVNnTxgq/6TfpcB4HSKDNmUCJtynKhsaLlltmbBaIKiuTDU2UHyXxx
+ /yTwsJ1UuvL8LN8TIVmzoEoeLyp5WWvBmo7kLWPuD41ZhUuQMzqFq1VKTE+kl5P9
+ jSK4v81XszRohum4Qj1WQCC1re4b+UhL7/BtUnnOMY2DrR202uFgzwPVZPWFPrni
+ iwMw1n/OGDzgYiI+4Y2ISy2mTmijY0l7dzqxV7+vDzD0jANqJkhndG7D8W3H8l/2
+ LjlaIusQoYW+bWCIV0woVODO0bdCXuzMM2bXYKIAI2zSbGG1CeKDznf9D1QD1DJv
+ nAoOxVGe57U3zyC0dHP2zvWB+v8lKr/3su5IBNWQPz6QOxcSzZ7DtwkrLonrl3dQ
+ 3/GRqXbB++WigMlNaV4SLftlR+yjLKkFaYu8TLx5kD1Fuok4x8D4Sb5nCZJMEtFC
+ Zkm5Ag0EV0SH2gEQAMFhq0hNt/8I7sbnjAe2atCMMjErTg4XTeWdrxDGDotwepHX
+ V39scQtRr4xXWYIoyrofXn6rK36MBXTxfBboSxj5+RkaPkBeY+7wPbyIW6LGKxdf
+ VyhJMoXfbXhxGjcJ1HPorDHEp5vNe63iJKUfQc6+T8K2UBHF9N5U45Ef3OlTK5mz
+ J23d/0yGf0zSbyd1VVjlU3AhjFAcrp8RSUNfV/SYu2j3GhkJtxUTHNhSwKSb3vMb
+ xzC9Tl5bQE0lyHWtaBYEy2Y0KPKkxXInrv01LtMMQfPIZMN5b+9RLZNAaGe5mwu0
+ YXb9VpXs9vj3MppLNTZmEyew55fzKN0gHcDojLCx55CQnkhqtUjShtbRdcOF5zM5
+ PZj7OKLN8hZ3qx3Rx0Dz+Cp+OeYPNdrKyCdn6xSaT2r6swCRoQMXiFDxbQZgyKjX
+ NxfVdjnAcqszKDqIekWzGnrqdbt19lb5Zno+/1PSqz9So7whknyNkcB9Mk9Lndjn
+ b/2Udv2jwhEJ0DGI3Lnvf/St1yIoRgtV3jdEIK8z8QpspIHmTbOK3DjmGU9PgIL2
+ Uu7o9nnzoqSbWn4agKUbBUed3nl5eht3nHaz9e40otTkaDp1HrYTU3RwpokHZ+Hf
+ j/b/Kc6BfGSC8iGBxnVhf6zjw/eU1K6Omik7JYcbL5NKKXp37bz8g5jD7erLABEB
+ AAGJAh8EGAEKAAkFAldEh9oCGwwACgkQpmFhCUUbu/Iz9BAAhI7nTJFQiK8Mq4SR
+ L5Bx4mTAnwzr36UvYpeQP7V9bB24NEYfXyK/Plk9Toraca2WauTJvLXxkx5UWd60
+ +4yI71xSAC2qjmOVSwpUfkIXIUTYRhvcZy3xSNppUWYmi1B8o89XDaVSfgyj92zb
+ KByyLexhHDxxleapybiZ2zAkgMp+EVoUptbkWVM+zqEBqUZN+kpZI5BjO1e4geU1
+ Jm5//dX0uth6CXzqAndxtJxbfBqo4iEk4YJb8JJdusBYJVBaA9ZQmzbwayILV825
+ pDkPGd42qm1Om3vzzaGVcOxgouJG7PlbPU8jeCNTmGMBN2I+UHqSFiWmyd58HT6Z
+ uXpENNGS04W3fUUM4+dw351/xh37DJinD6ga4oUN8XijIHaZMe/e7hvdAnSq6/X8
+ U8gt5ZuGUo4VOURM60tcbQPZS4q2ta5z2A8X5OYg8jVqop7RNXsatqkgsW2H3J8W
+ fohgI7xFa6o9Ykn+CnlNXgQ8mxW2oFIGKMkloXvily70LMsfCnSBYsH7pHx+4H8y
+ D1d+Vhb02hgMA0JXL5L9wFtK2OxlmOFFz2TXOr3IomWvcHeJt9Zt9z/KrPCNht6N
+ wJPRyhcrkpIKiJEQKtaifMZ7Z14S/6XWatIFbRgxJ8fnwaB7WLIfISNXsUTfKMuH
+ vwsQCkXd7RcMKF1KIOGVnmClF1g=
+ =jIYH
+ -----END PGP PUBLIC KEY BLOCK-----
+EOF
+
+sudo cat > /etc/apt/sources.list.d/ubuntu.sources <<-EOF
+#! Canonical Official Repositories
+Name: $DISTRIB_DESCRIPTION $DISTRIB_RELEASE
+Enabled: yes
+Types: deb 
+URIs: http://archive.ubuntu.com/ubuntu/ http://us.archive.ubuntu.com/ubuntu 
+Suites: $DISTRIB_CODENAME $DISTRIB_CODENAME-updates $DISTRIB_CODENAME-backports $DISTRIB_CODENAME-security
+Components: main restricted universe multiverse
+Architectures: $(dpkg --print-architecture)
+Signed-By: 
+ -----BEGIN PGP PUBLIC KEY BLOCK-----
+ .
+ mQINBE+tgXgBEADfiL1KNFHT4H4Dw0OR9LemR8ebsFl+b9E44IpGhgWYDufj0gaM
+ /UJ1Ti3bHfRT39VVZ6cv1P4mQy0bnAKFbYz/wo+GhzjBWtn6dThYv7n+KL8bptSC
+ Xgg1a6en8dCCIA/pwtS2Ut/g4Eu6Z467dvYNlMgCqvg+prKIrXf5ibio48j3AFvd
+ 1dDJl2cHfyuON35/83vXKXz0FPohQ7N7kPfI+qrlGBYGWFzC/QEGje360Q2Yo+rf
+ MoyDEXmPsoZVqf7EE8gjfnXiRqmz/Bg5YQb5bgnGbLGiHWtjS+ACIdLUq/h+jlSp
+ 57jw8oQktMh2xVMX4utDM0UENeZnPllVJSlR0b+ZmZz7paeSar8Yxn4wsNlL7GZb
+ pW5A/WmcmWfuMYoPhBo5Fq1V2/siKNU3UKuf1KH+X0p1oZ4oOcZ2bS0Zh3YEG8IQ
+ ce9Bferq4QMKsekcG9IKS6WBIU7BwaElI2ILD0gSwu8KzvNSEeIJhYSsBIEzrWxI
+ BXoN2AC9PCqqXkWlI5Xr/86RWllB3CsoPwEfO8CLJW2LlXTen/Fkq4wT+apdhHei
+ WiSsq/J5OEff0rKHBQ3fK7fyVuVNrJFb2CopaBLyCxTupvxs162jjUNopt0c7OqN
+ BoPoUoVFAxUSpeEwAw6xrM5vROyLMSeh/YnTuRy8WviRapZCYo6naTCY5wARAQAB
+ tEJVYnVudHUgQXJjaGl2ZSBBdXRvbWF0aWMgU2lnbmluZyBLZXkgKDIwMTIpIDxm
+ dHBtYXN0ZXJAdWJ1bnR1LmNvbT6JAjgEEwECACIFAk+tgXgCGwMGCwkIBwMCBhUI
+ AgkKCwQWAgMBAh4BAheAAAoJEDtP5qzAsh8yXX4QAJHUdK6eYMyJcrFP3yKXtUYQ
+ MpaHRM/floqZtOFhlmcLVMgBNOr0eLvBU0JcZyZpHMvZciTDBMWX8ItCYVjRejf0
+ K0lPvHHRGaE7t6JHVUCeznNbDMnOPYVwlVJdZLOa6PmE5WXVXpk8uTA8vm6RO2rS
+ 23vE7U0pQlV+1GVXMWH4ZLjaQs/Tm7wdvRxeqTbtfOEeHGLjmsoh0erHfzMV4wA/
+ 9Zq86WzuJS1HxXR6OYDC3/aQX7CxYT1MQxEw/PObnHtkl3PRMWdTW7fSQtulEXzp
+ r2/JCev6Mfc8Uy0aD3jng9byVk9GpdNFEjGgaUqjqyZosvwAZ4/dmRjmMEibXeNU
+ GC8HeWC3WOVV8L/DiA+miJlwPvwPiA1ZuKBI5A8VF0rNHW7QVsG8kQ+PDHgRdsmh
+ pzSRgykN1PgK6UxScKX8LqNKCtKpuEPApka7FQ1u4BoZKjjpBhY1R4TpfFkMIe7q
+ W8XfqoaP99pED3xXch2zFRNHitNJr+yQJH4z/o+2UvnTA2niUTHlFSCBoU1MvSq1
+ N2J3qU6oR2cOYJ4ZxqWyCoeQR1x8aPnLlcn4le6HU7TocYbHaImcIt7qnG4Ni0OW
+ P4giEhjOpgxtrWgl36mdufvriwya+EHXzn36EvQ9O+bm3fyarsnhPe01rlsRxqBi
+ K1JOw/g4GnpX8iLGEX1VmQINBE+tjmgBEAC7pKK78t89DW7mvMoSgiScLfPNF8/T
+ SF380is0hFRL3dOmcXEfNsX26jtv8bdvvtkElB1fPwOntmqSAsrLOuURVQ6GSxH7
+ IDU5QFfaTIsudtLR5YTlC3ZuOTOb1HWEK26fDRXuIWjhFDXJH3KLv+rSrq0+x7Zt
+ H++CHq5XJWk7VUh/wWcGxZefs7+1HTivymhjXCOwQvqblzZ5MAec9i4QIXxkqX1H
+ Y7ryxGVdjj9lApOnoU5EcSYr08cm7xQEgrdDLAZFQxDYBLDuV6E6jKEfAfwZINSE
+ e4Ocm82vtCF5K0HiwhFU09ky2yogbMuTTi2f8ibN8SbbhZDJlDPd2ZkkpsKNfIAL
+ mOiPhHGvXGmtg6FdzRUOSGirSm8tcakpS+d0/IElbD453sksxg6s3cTs7Q+Pudac
+ cyQ0BqatMnzmfxCVOotT65kVnmz2P+4Q0gRSQ/Zi9Inz+OrzWxtn6/Tdw+FMUwvB
+ ccxW1r88k6uVLz23jW/8jOuwnUp4JKmZta/U2UZKTyPyrvTYhp/zK332BEnxiRY4
+ ZfQjA4Iwlw00l4pYBDLLc6TFJtLbDv859UCisXa8MtWYWrlM3YfGFs9k1WemML8u
+ 79g2DK8g3VPkD94Q5anqufEGm74K/keOmss8cQoBX9VPFMpS1mFCT+2UdGP0UvMl
+ ADct0aFnAwtb9QARAQABtEFVYnVudHUgQ0QgSW1hZ2UgQXV0b21hdGljIFNpZ25p
+ bmcgS2V5ICgyMDEyKSA8Y2RpbWFnZUB1YnVudHUuY29tPokCNwQTAQoAIQUCT62O
+ aAIbAwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgAAKCRDZSqPw7+IQkkhAEACJjZZX
+ uAabMrC49Z52HywVZipJgoV5ufMi2LQYMkyGKVQQ/E74lUjccMmbQ4j00ihTYB+F
+ /i29AxfavJnlSpWgmwjPO4YY5jvooUiXQmVHX10oM1w3+Y9wScmeUY3IhTtwiFaB
+ Jr6TZ7RvOTg/pbQ0GvzxNlkSobuqFCZ023mcl2Y7OkY1PZgxiLafD6Rx2O/gclQP
+ s4YfHo8bKRA4o10702nE8YE+dixIgAQw67Txhq5idNxsWpudKq9J1fLgnEz7i9AJ
+ UOf12sg9X7ZvpXZ3QvMV5iOvLA4DRLv9HIxyz70XqeakS+uzfKXuCMzhdUTIb/tN
+ ACNB37+reIqdPsyUF3txVyWaL1jMkRsv617yKAiYvPNwMDRvrbKiJ4Icnd4tPzmq
+ z5HBFUyULns3JzJNjpgKCvLGhVq+lVsdpMlpQxEG5/bhzJgB1jrIbkcOSfnQ1y0G
+ v9CItel+1q0BHMn0dPVWaNfKYFGsz4igW+uj//C09/gtGMm78PQfjqEoR2j/Tam/
+ tmucxSK331yfm5ag2CQYGC3bswfII+4EanX9dN/RG3/2dsSyYruWpTIQG6Xa7+AZ
+ tYBDEXNYovgdJtXWyUtW0X7R6vIjh1HYer3dR6ivJ+q/bWGY45zHeNBNU33hlnlx
+ EENif3RZ/j/w3SjGrtSQK69maNR6onq492e+65kCDQRbn8HaARAA7/xscrcfy3El
+ 2LjNDMCqI2wcnvNbNBtZxMfpc+lQFKSFGZ25KnVwRwvncKxkvwnni7gIz0S1PAKM
+ RP4472VafMRRhFh2HZJalxmf4CXz+Xd3yFAbWR2RCZfAfJvaTB3/wEEHbAvmM4s0
+ hubeTIZ6LcNOOC17XRBJMdreic9Dhq4fuSKMal+6WYqugr9fQaIWlIqCjHaexEuk
+ WHze6Jeh0ixZazF7VX4f4o6TfY92YVRlXkQvJCh0LCeT5CG5r8QYlIe0iZn2VMdC
+ EITTGgx133WQBjbZ4c8zUXm9RajS0lZK0vz57AEMzIRtQQ5tlTkheuI3myl33xaj
+ OS10UE3qky7I1G266kerPxgjvFBe431I+iO7Wi8oJrBzvyQ+I6SkQtIG6VAX2oic
+ i77nqcd5FqKi97DdC4ZTCPNPnwOxk76DseLaalZc5ROk2o2Lvo31t0KThUuXsBDH
+ S9uoc8bGYP4Hmb02wK3D/jrCSkZob+JDaOgMnch0P92Vf391/Zk9/0jy2yWrppIK
+ d2M3ereT3gbvmUJP5jeVjTbmooTRFe5ZW9WYb2NBcbvQVXfwTZdK87sad6yIpwdk
+ 19kgoO8BOcV5MF7kP9nkwxNL9B5Rp7ZLmYxqMA2ZMR2UEsWVTs3WQkVWl/1hBS6S
+ mtgEKcOUSa0OKGfzn4n18icz9u6NN8EAEQEAAbRCVWJ1bnR1IEFyY2hpdmUgQXV0
+ b21hdGljIFNpZ25pbmcgS2V5ICgyMDE4KSA8ZnRwbWFzdGVyQHVidW50dS5jb20+
+ iQI4BBMBCgAiBQJbn8HaAhsDBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIXgAAKCRCH
+ GSDRmRvJPCxzEACktnJ8c/+VmqAjlgK3+YOlB23jgoHOQwZtIQrhQ2Vlr+Nu2hno
+ twj7i8NAxiwl2XcnOXahPJr4zJTppgCipY9bhoN02Am0Fo1j3jJwT2W5BYJGaFye
+ /+gge21kYbdbB86bdS02fkmA8DsCevEEaew0WmZfWOkIlG3roatg1HE6H1WwcW4a
+ 3JDeGbXi75vv5xvZv3IqKXOui8EXZManyd9gsqvtU0uVWiCQxuw1s4hvim7uqggz
+ OEDZYNyx+6deAq0cQG3OJb6IUYLFeHkKrCHHRZLlWORzz49ivE6qWOkk3vBodGqa
+ xtUVfGSmstykjKZ8ldXwCp+HzPW8oi80AKLwtC2fTDDLKwEv+OQLwtyBCkkoYyxZ
+ 9V9XUQojuv+45mRKGbQKed4ZH/EjAbIu/IVTawbpmcHyHQQNb9tvi2OMUCvKuFwq
+ EXAPRvqb81PWFVu3EZw2WRpdLsDsO8/T5EAReShSo1g8+HwpPiuvmLRqaLxinpBg
+ W/COxAOlKbz4KgP0HSNLdSAT9DdOkUHLNX1GgEBLc+gxsuc5EYUeKRkmZ/nRRE+z
+ 3QIxCvOMuwXWOLflNY3EiLwY9Bdgey8ES+8RqUqSCov3pAFy7Nde27xR2gr5lGDe
+ yVadRjJlRcYSHceghZt38RvEIzW+bXq3v2KivrjoHF58tVJcLQlM5a0mjw==
+ =Mq8M
+ -----END PGP PUBLIC KEY BLOCK-----
+EOF
+
+dpkg -s nala >& /dev/null || sudo apt install --assume-yes nala 
+sudo \cat > /etc/apt/sources.list.d/nala.sources <<-EOF
+#! Mirrors for Canonical Official Repositories
+Name: Mirrors for $DISTRIB_DESCRIPTION $DISTRIB_RELEASE
+Enabled: yes
+Types: deb
+URIs: http://mirror.il.kamatera.com/ubuntu/ http://mirror.il-jr.kamatera.com/ubuntu/ http://mirror.il-rh.kamatera.com/ubuntu/
+Suites: $DISTRIB_CODENAME $DISTRIB_CODENAME-updates $DISTRIB_CODENAME-backports $DISTRIB_CODENAME-security
+Components: main restricted universe multiverse
+Architectures: $(dpkg --print-architecture)
+Signed-By:
+ -----BEGIN PGP PUBLIC KEY BLOCK-----
+ .
+ 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
+ OS10UE3qky7I1G266kerPxgjvFBe431I+iO7Wi8oJrBzvyQ+I6SkQtIG6VAX2oic
+ i77nqcd5FqKi97DdC4ZTCPNPnwOxk76DseLaalZc5ROk2o2Lvo31t0KThUuXsBDH
+ S9uoc8bGYP4Hmb02wK3D/jrCSkZob+JDaOgMnch0P92Vf391/Zk9/0jy2yWrppIK
+ d2M3ereT3gbvmUJP5jeVjTbmooTRFe5ZW9WYb2NBcbvQVXfwTZdK87sad6yIpwdk
+ 19kgoO8BOcV5MF7kP9nkwxNL9B5Rp7ZLmYxqMA2ZMR2UEsWVTs3WQkVWl/1hBS6S
+ mtgEKcOUSa0OKGfzn4n18icz9u6NN8EAEQEAAbRCVWJ1bnR1IEFyY2hpdmUgQXV0
+ b21hdGljIFNpZ25pbmcgS2V5ICgyMDE4KSA8ZnRwbWFzdGVyQHVidW50dS5jb20+
+ iQI4BBMBCgAiBQJbn8HaAhsDBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIXgAAKCRCH
+ GSDRmRvJPCxzEACktnJ8c/+VmqAjlgK3+YOlB23jgoHOQwZtIQrhQ2Vlr+Nu2hno
+ twj7i8NAxiwl2XcnOXahPJr4zJTppgCipY9bhoN02Am0Fo1j3jJwT2W5BYJGaFye
+ /+gge21kYbdbB86bdS02fkmA8DsCevEEaew0WmZfWOkIlG3roatg1HE6H1WwcW4a
+ 3JDeGbXi75vv5xvZv3IqKXOui8EXZManyd9gsqvtU0uVWiCQxuw1s4hvim7uqggz
+ OEDZYNyx+6deAq0cQG3OJb6IUYLFeHkKrCHHRZLlWORzz49ivE6qWOkk3vBodGqa
+ xtUVfGSmstykjKZ8ldXwCp+HzPW8oi80AKLwtC2fTDDLKwEv+OQLwtyBCkkoYyxZ
+ 9V9XUQojuv+45mRKGbQKed4ZH/EjAbIu/IVTawbpmcHyHQQNb9tvi2OMUCvKuFwq
+ EXAPRvqb81PWFVu3EZw2WRpdLsDsO8/T5EAReShSo1g8+HwpPiuvmLRqaLxinpBg
+ W/COxAOlKbz4KgP0HSNLdSAT9DdOkUHLNX1GgEBLc+gxsuc5EYUeKRkmZ/nRRE+z
+ 3QIxCvOMuwXWOLflNY3EiLwY9Bdgey8ES+8RqUqSCov3pAFy7Nde27xR2gr5lGDe
+ yVadRjJlRcYSHceghZt38RvEIzW+bXq3v2KivrjoHF58tVJcLQlM5a0mjw==
+ =Mq8M
+ -----END PGP PUBLIC KEY BLOCK-----
+EOF
