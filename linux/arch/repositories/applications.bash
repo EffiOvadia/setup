@@ -22,4 +22,3 @@ pacman -Syu --needed tmux vim emacs screen mc mutt htop
 pacman -Syu --needed chrome-gnome-shell filezilla firefox thunderbird qbittorrent deluge telegram-desktop thunderbird openvpn chromium
 ## Office & Multimedia
 pacman -Syu --needed libreoffice-fresh abiword gimp hugin darktable inkscape digikam rawtherapee scribus shotwell krita audacity blender vlc calibre texmaker lyx texstudio gummi
-

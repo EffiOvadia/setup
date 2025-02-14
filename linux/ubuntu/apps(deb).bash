@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Cleaning
+## Cleaning 
 apps=( gnome-games )
 purge  ${apps[@]}
 ubuntu-report -f send no
@@ -141,3 +141,5 @@ install ${apps[@]}
 nextdns install && nextdns config set -config $ID && nextdns config
 nextdns start && systemctl enable nextdns && systemctl status nextdns
 
+apt update
+apt install --install-suggests gnome-software
