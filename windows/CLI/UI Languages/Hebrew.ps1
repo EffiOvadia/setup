@@ -3,7 +3,6 @@ Install-Language he-IL
 
 Set-SystemPreferredUILanguage -Language he-IL
 
-
 $CapabilityList = 
 @(
     "Language.Basic~~~he-IL~0.0.1.0", 
