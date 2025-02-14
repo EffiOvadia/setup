@@ -1,5 +1,7 @@
+#!/bin/sh
+
 ClientID="OVADIA"
-OctetRange="5"
+OctetRange="50"
 ### LAN IP/DHCP 
 nvram set computer_name="Router"
 nvram set lan_hostname="Router"

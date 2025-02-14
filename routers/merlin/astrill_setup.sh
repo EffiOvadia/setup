@@ -1,3 +1,5 @@
+#!/bin/sh
+
 ### Astrill
 nvram set astrill_vpnmode="6"
 nvram set astrill_abort="0"
