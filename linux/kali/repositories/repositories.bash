@@ -9,7 +9,7 @@ sudo [ -f /etc/apt/sources.list ] && sudo rm -f /etc/apt/sources.list
 #@ Generate new format (deb822) sources file in /etc/apt/sources.list.d/
 sudo \cat > /etc/apt/sources.list.d/kali.sources <<-EOF
 #! Kali Repositories
-X-Repolib-Name: $(lsb_release -sd)
+Name: $(lsb_release -sd)
 Enabled: yes
 Types: deb deb-src
 URIs: https://http.kali.org/kali
