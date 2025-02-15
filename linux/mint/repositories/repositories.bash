@@ -1,15 +1,15 @@
 #!/bin/bash
 
 ## Install TOR transport support for apt
-dpkg -s apt-transport-tor >& /dev/null || sudo apt install --assume-yes apt-transport-tor  
+dpkg -s apt-transport-tor   >& /dev/null || sudo apt install --assume-yes apt-transport-tor  
 ## Install HTTPS ransport support for apt
 dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes apt-transport-https 
 ## delete old format sources.list 
-sudo [ -f /etc/apt/sources.list ] && sudo rm -f /etc/apt/sources.list
-sudo [ -f /etc/apt/sources.list.d/official-package-repositories.list ] && \
+[ -f /etc/apt/sources.list ] && sudo rm -f /etc/apt/sources.list
+[ -f /etc/apt/sources.list.d/official-package-repositories.list ] && \
   sudo \rm -f /etc/apt/sources.list.d/official-package-repositories.list
 ## Generate new format (deb822) sources file in /etc/apt/sources.list.d/
-sudo [ -f /etc/upstream-release/lsb-release ] && . /etc/upstream-release/lsb-release
+[ -f /etc/upstream-release/lsb-release ] && . /etc/upstream-release/lsb-release
 sudo cat > /etc/apt/sources.list.d/linuxmint.sources <<-EOF
 #! Linux Mint Official Repositories
 Name: $(lsb_release -sd) $(lsb_release -sc)

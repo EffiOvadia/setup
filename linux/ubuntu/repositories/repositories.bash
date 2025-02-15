@@ -1,14 +1,11 @@
 #!/bin/bash
 
-# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
-# gpg --keyring /usr/share/keyrings/ubuntu-archive-keyring.gpg --no-default-keyring --export -a
-
 ## Install TOR transport support for apt
-dpkg -s apt-transport-tor >& /dev/null || sudo apt install --assume-yes apt-transport-tor  
+dpkg -s apt-transport-tor   >& /dev/null || sudo apt install --assume-yes apt-transport-tor  
 ## Install HTTPS ransport support for apt
 dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes apt-transport-https 
 ## delete old format sources.list 
-sudo [ -f /etc/apt/sources.list ] && sudo rm -f /etc/apt/sources.list
+[ -f /etc/apt/sources.list ] && sudo rm -f /etc/apt/sources.list
 ## Generate new format (deb822) sources file in /etc/apt/sources.list.d/
 sudo \cat > /etc/apt/sources.list.d/ubuntu.sources <<-EOF
 #! Canonical Official Repositories

@@ -6,9 +6,9 @@ for snap in $(snap list | awk 'NR>1 {print $1}'); do sudo snap remove --purge "$
 for snap in $(snap list | awk 'NR>1 {print $1}'); do sudo snap remove --purge "$snap"; done
 sudo systemctl stop snapd
 sudo systemctl disable snapd
-sudo syetemctl mask snapd
+sudo systemctl mask snapd
 sudo apt purge snapd -y
-sudp apt-mark hold snapd
+sudo apt-mark hold snapd
 sudo rm -fr ~/snap/
 sudo rm -fr /snap
 sudo rm -fr /var/snap
