@@ -18,3 +18,4 @@ Components: main contrib non-free non-free-firmware
 Architectures: $(dpkg --print-architecture)
 Signed-By: /usr/share/keyrings/kali-archive-keyring.gpg
 EOF
+
