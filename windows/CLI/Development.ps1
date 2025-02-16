@@ -23,10 +23,12 @@ $Apps =
   [PSCustomObject]@{Name='VIM'; ID='vim.vim'}
   [PSCustomObject]@{Name='Gitub'; ID='Git.Git'}
   [PSCustomObject]@{Name='GitHub.cli'; ID='GitHub.cli'}
+  [PSCustomObject]@{Name='Lazygit'; ID='JesseDuffield.lazygit'} 
   [PSCustomObject]@{Name='FarManager'; ID='FarManager.FarManager'}
   [PSCustomObject]@{Name='Wireshark'; ID='WiresharkFoundation.Wireshark'}
   [PSCustomObject]@{Name='DotNet6'; ID='Microsoft.DotNet.DesktopRuntime.6'}
   [PSCustomObject]@{Name='DotNet7'; ID='Microsoft.DotNet.DesktopRuntime.7'}
+  
   #[PSCustomObject]@{Name='VMware Workstation Pro'; ID='VMware.WorkstationPro'}
   #[PSCustomObject]@{Name='VirtualBox'; ID='Oracle.VirtualBox'}
   )
