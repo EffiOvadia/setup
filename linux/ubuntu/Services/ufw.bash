@@ -57,8 +57,8 @@ ufw disable
 ufw default allow outgoing
 ufw default deny  incoming
 #ufw allow from any to 0.0.0.0/0 app  DNS       comment "DNS"
-ufw allow from any to 0.0.0.0/0 app  NFS       comment "NFS"
-ufw allow from any to 0.0.0.0/0 app  Samba     comment "Samba"
+#ufw allow from any to 0.0.0.0/0 app  NFS       comment "NFS"
+#ufw allow from any to 0.0.0.0/0 app  Samba     comment "Samba"
 ufw allow from any to 0.0.0.0/0 app  OpenSSH   comment "OpenSSH"
 #ufw allow from any to 0.0.0.0/0 app  OpenVPN   comment "OpenVPN"
 #ufw allow from any to 0.0.0.0/0 app  WireGuard comment "WireGuard"

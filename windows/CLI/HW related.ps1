@@ -5,13 +5,14 @@
 
 ## ----- 3rdparty tools  -----------------------------------
 $Apps = 
-  @(
+  @(  
+  [PSCustomObject]@{Name='Samsung DeX'; ID='Samsung.DeX'}
+  [PSCustomObject]@{Name='Logitech.LogiBolt'; ID='Logitech.LogiBolt'}
+  [PSCustomObject]@{Name='Logitech OptionsPlus'; ID='Logitech.OptionsPlus'}
+  [PSCustomObject]@{Name='Intel Driver Assistant'; ID='Intel.IntelDriverAndSupportAssistant'}
   [PSCustomObject]@{Name='YubiKey Personalization'; ID='Yubico.YubiKeyPersonalizationTool'}
   [PSCustomObject]@{Name='Yubico Authenticator'; ID='Yubico.Authenticator'}
   [PSCustomObject]@{Name='Yubikey Manager'; ID='Yubico.YubikeyManager'}
-  [PSCustomObject]@{Name='Samsung SmartSwitch'; ID='Samsung.SmartSwitch'}
-  [PSCustomObject]@{Name='Samsung SmartView'; ID='Samsung.SmartView'}
-  [PSCustomObject]@{Name='Samsung DeX'; ID='Samsung.DeX'}
   )
 
 foreach ($App in $Apps) 
