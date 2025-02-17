@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 
 ## install Official VMware Open Source Tools
 sudo pacman -S open-vm-tools 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 [[ ! -x "$(command -v sudo)" ]] && apt install --assume-yes sudo
 

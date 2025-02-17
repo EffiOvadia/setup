@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 sed -i 's/[# ]*arm_freq=.*/arm_freq=1750/g' /boot/config.txt
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 pacman -Syu
 pacman -S --needed xorg xorg-server
 pacman -S --needed gnome gnome-extra

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #@ Install TOR transport support for apt
 dpkg -s apt-transport-tor >& /dev/null || sudo apt install --assume-yes apt-transport-tor  

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## Install TOR and HTTPS transport for apt 
 sudo apt install --assume-yes apt-transport-https apt-transport-tor 
