@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 apt install -y samba
 
 if [ -d /home/public ] ; then chmod 777 /home/public -R; else mkdir -m 777 -p /home/public; fi

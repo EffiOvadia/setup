@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 sudo apt install nfs-common nfs-kernel-server -y
 

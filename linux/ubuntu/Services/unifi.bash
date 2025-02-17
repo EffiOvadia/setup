@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ### Get GPG key
 ### sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 06E85760C0A52C50 
 sudo wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ubnt.com/unifi/unifi-repo.gpg 

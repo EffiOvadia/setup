@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Uninstall all unused FlatPak apps
 flatpak uninstall -y --unused

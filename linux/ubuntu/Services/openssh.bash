@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ### Configuring OpenSSH server
 apt install -y openssh-server rsync fail2ban
 ### -----------------------------------------------------------------

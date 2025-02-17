@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #@ Install Ubuntu mainline kernel 
 [ -f /etc/apt/sources.list.d/cappelikan.sources ] && \

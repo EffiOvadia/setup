@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## Some usefull FlatPak apps to install
 flatpak install flathub -y us.zoom.Zoom

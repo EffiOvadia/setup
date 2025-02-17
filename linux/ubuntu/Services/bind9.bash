@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 apt install -y bind9 bind9utils bind9-doc dnstop dnscrypt-proxy dnscrypt-proxy-plugins unbound ldnsutils
 
 cat > /etc/bind/named.conf.options <<-EOF

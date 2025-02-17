@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 snap install skype
 snap install p3x-onenote

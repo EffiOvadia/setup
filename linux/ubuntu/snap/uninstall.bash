@@ -1,9 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ### Remov SNAP
 snap list
 for snap in $(snap list | awk 'NR>1 {print $1}'); do sudo snap remove --purge "$snap"; done
 for snap in $(snap list | awk 'NR>1 {print $1}'); do sudo snap remove --purge "$snap"; done
+
+
 sudo systemctl stop snapd
 sudo systemctl disable snapd
 sudo systemctl mask snapd

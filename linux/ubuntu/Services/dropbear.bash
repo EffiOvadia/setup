@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ### Configuring Dropbear SSH server
 apt install -y dropbear 
 

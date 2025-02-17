@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 apt install -y isc-dhcp-server
 
 cat >/etc/dhcp/dhcpd.conf <<-EOF:q

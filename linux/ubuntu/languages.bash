@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 sudo usermod -aG sudo avraham
 
