@@ -47,10 +47,10 @@ ports=3478,10001,1900,5656:5699/udp|8080,8443,8880,8843,6789,27117/tcp
 EOF
 ## ---------------------------------------------------------------------------------------------
 \cat > /etc/ufw/applications.d/nfs <<-EOF
-[NFS]
-title=Network File System
-description=The Network File System (NFS) protocol allows remote access to shared directories and files over a network.
-ports=111,2049,20048,32765:32767/tcp|111,2049,20048,32765:32767/udp
+[NFSv4]
+title=Network File System version 4
+description=NFSv4 allows a system to share directories and files with others over a network using TCP port 2049.
+ports=2049/tcp
 EOF
 ### ---------------------------------------------------------------------------------------------
 
@@ -58,8 +58,9 @@ ufw reset
 ufw disable
 ufw default allow outgoing
 ufw default deny  incoming
+ufw app update all 
 #ufw allow from any to 0.0.0.0/0 app  DNS       comment "DNS"
-#ufw allow from any to 0.0.0.0/0 app  NFS       comment "NFS"
+ufw allow from any to 0.0.0.0/0 app  NFSv4      comment "NFSv4"
 #ufw allow from any to 0.0.0.0/0 app  Samba     comment "Samba"
 ufw allow from any to 0.0.0.0/0 app  OpenSSH   comment "OpenSSH"
 #ufw allow from any to 0.0.0.0/0 app  OpenVPN   comment "OpenVPN"
@@ -72,3 +73,4 @@ ufw status numbered
 ### ---------------------------------------------------------------------------------------------
 systemctl restart ufw.service
 ### ---------------------------------------------------------------------------------------------
+
