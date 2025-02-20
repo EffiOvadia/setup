@@ -53,7 +53,7 @@ Push-Location -path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer"
   Set-ItemProperty -Path ".\FolderDescriptions\{35286a68-3c57-41a1-bbb1-0eae73d76c95}\PropertyBag" ThisPCPolicy -Force -Value Hide
   #/ Hide 3D Objects from This PC
   if ( Test-Path ".\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" ) 
-  { Remove-Item ".\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" }
+    { Remove-Item ".\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" }
 Pop-Location
 ## NumLock Initial status
 New-PSDrive -PSProvider Registry -Name HKU -Root HKEY_USERS
