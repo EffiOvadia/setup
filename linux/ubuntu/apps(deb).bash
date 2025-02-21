@@ -104,7 +104,7 @@ apps=( onlyoffice-desktopeditors libreoffice teamviewer code keepassxc remmina )
 install ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( darktable inkscape digikam rawtherapee shotwell showfoto krita audacity \
-  gimp hugin handbrake blender shotcut vlc lmms ffmpeg )
+  gimp hugin handbrake blender shotcut vlc ffmpeg )
 install ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( fonts-sil-ezra fonts-sil-lateef fonts-sil-scheherazade fonts-sil-andika \
