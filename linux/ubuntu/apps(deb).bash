@@ -19,7 +19,7 @@ apps=( software-properties-common flatpak nala synaptic hydrapaper gnome-shell-e
 install ${apps[@]}
 flatpak remote-add --if-not-exists flathub https://flathub.org/
 #-----------------------------------------------------------------------
-apps=( ksh fish tcsh putty gnome-terminal tmux vim neovim screen mc lfm htop \
+apps=( putty gnome-terminal tmux vim neovim screen mc lfm htop \
   dnstop iftop iotop zsh powerline fonts-powerline cowsay fortune neofetch \
   ripgrep tldr bat fzf jq zoxide hyperfine glances btop mutt nmap irssi \
   elinks lynx ncal dateutils ncat rxvt-unicode )

@@ -26,7 +26,7 @@ gsettings set org.gnome.desktop.background show-desktop-icons false
 # Theme
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
-gsettings set org.gnome.desktop.interface cursor-theme 'Redglass'
+gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
 gsettings set org.gnome.shell.extensions.user-theme name 'Adwaita'
 
 #  Text Scaling Factor
