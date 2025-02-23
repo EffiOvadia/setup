@@ -5,7 +5,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-
 
 # Make Dock Transparent:
 gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
-gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.3
+gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.5
 
 # Icon Size in Dock
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 24
