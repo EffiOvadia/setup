@@ -8,7 +8,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
 gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.5
 
 # Icon Size in Dock
-gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 24
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 30
 
 # Workspace Mode (Dynamic or Fixed Number)
 gsettings set org.gnome.mutter dynamic-workspaces false
@@ -30,7 +30,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
 gsettings set org.gnome.shell.extensions.user-theme name 'Adwaita'
 
 #  Text Scaling Factor
-gsettings set org.gnome.desktop.interface text-scaling-factor 1.2
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.0
 
 # Laptop Lid Close Behavior (nothing, suspend, hibernate, shutdown)
 gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'suspend'

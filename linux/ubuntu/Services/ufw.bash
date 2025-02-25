@@ -60,7 +60,7 @@ ufw default allow outgoing
 ufw default deny  incoming
 ufw app update all 
 #ufw allow from any to 0.0.0.0/0 app  DNS       comment "DNS"
-ufw allow from any to 0.0.0.0/0 app  NFSv4      comment "NFSv4"
+#ufw allow from any to 0.0.0.0/0 app  NFSv4      comment "NFSv4"
 #ufw allow from any to 0.0.0.0/0 app  Samba     comment "Samba"
 ufw allow from any to 0.0.0.0/0 app  OpenSSH   comment "OpenSSH"
 #ufw allow from any to 0.0.0.0/0 app  OpenVPN   comment "OpenVPN"
