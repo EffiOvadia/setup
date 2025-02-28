@@ -105,3 +105,6 @@ Set-Service -Name "Connected User Experiences and Telemetry" -Status Stopped -St
 
 ## turn off the "Send optional diagnostic data"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" AllowTelemetry -Value 0
+
+## Enable sudo command in PowerShell (inline mode)
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Sudo" Enabled -Value 3
