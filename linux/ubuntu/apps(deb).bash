@@ -113,8 +113,7 @@ apps=( fonts-sil-ezra fonts-sil-lateef fonts-sil-scheherazade fonts-sil-andika \
   ttf-bitstream-vera fonts-agave fonts-roboto fonts-noto ttf-mscorefonts-installer \
   fonts-cascadia-code fonts-open-sans fonts-freefont-ttf fonts-liberation2 \
   fonts-dejavu fonts-jetbrains-mono fonts-mononoki fonts-inter fonts-noto-cjk \
-  culmus typecatcher
-  fonts-sil-gentium )
+  culmus typecatcher fonts-source-code-pro fonts-sil-gentium )
 install ${apps[@]}
 apps=( openvpn wireguard network-manager-openconnect-gnome openconnect geary \
   filezilla qbittorrent deluge transmission )
