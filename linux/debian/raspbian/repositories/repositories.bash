@@ -9,7 +9,7 @@ dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes apt-tr
 ## Generate new format (deb822) sources file in /etc/apt/sources.list.d/
 sudo \cat > /etc/apt/sources.list.d/raspi.sources <<-EOF
 #! Rasbian
-Name: Rasbian
+Name: Rasbian 
 Enabled: yes
 Types: deb 
 URIs: http://archive.raspberrypi.com/debian/
