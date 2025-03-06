@@ -4,4 +4,6 @@
 flatpak uninstall -y --unused
 
 # Completly uninstall FlatPak and all installed FlatPak Apps
-sudo apt remove -y --autoremove flatpak && sudo apt purge -y flatpak
+#sudo apt remove -y --autoremove flatpak && sudo apt purge -y flatpak
+remove flatpak
+sudo rm -rf /var/lib/flatpak

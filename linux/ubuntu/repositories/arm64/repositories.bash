@@ -1,12 +1,12 @@
 #!/bin/bash
 
-## Install TOR transport support for apt
-dpkg -s apt-transport-tor >& /dev/null || sudo apt install --assume-yes apt-transport-tor  
-## Install HTTPS ransport support for apt
-dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes apt-transport-https 
-## delete old format sources.list 
+# Install TOR transport support for apt
+sudo dpkg -s apt-transport-tor   >& /dev/null || sudo apt install --assume-yes apt-transport-tor  
+# Install HTTPS ransport support for apt
+sudo dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes apt-transport-https 
+# delete old format sources.list 
 [ -f /etc/apt/sources.list ] && sudo rm -f /etc/apt/sources.list
-## Generate new format (deb822) sources file in /etc/apt/sources.list.d/
+# Generate new format (deb822) sources file in /etc/apt/sources.list.d/
 sudo \cat > /etc/apt/sources.list.d/ubuntu.sources <<-EOF
 #! Canonical Official Ubuntu Repositories
 Name: $(lsb_release -sd) $(lsb_release -sc)

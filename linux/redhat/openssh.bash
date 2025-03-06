@@ -2,7 +2,6 @@
 
 sudo yum update -y
 
-
 sudo yum install -y openssh-server rsync
 sudo systemctl enable sshd
 sudo systemctl start sshd
