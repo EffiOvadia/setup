@@ -13,7 +13,7 @@ Name: Debian SID (Unstable)
 Enabled: yes
 Types: deb
 URIs: https://deb.debian.org/debian/ 
-Suites: sid
+Suites: unstable
 Components: main contrib non-free non-free-firmware
 Architectures: $(dpkg --print-architecture)
 Signed-By: 
