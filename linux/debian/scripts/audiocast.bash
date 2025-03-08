@@ -35,3 +35,4 @@ EOF
 chmod 555 /etc/scripts/bt_audiocast.sh
 # Reload the udev rules to apply changes
 udevadm control --reload-rules
+
