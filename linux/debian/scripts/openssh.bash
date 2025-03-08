@@ -11,7 +11,6 @@ sudo chown root:root /etc/ssh/authorized_keys
 sudo \cat > /etc/ssh/authorized_keys <<-'EOF'
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMh4Cm/ipoAhQj3+8I6z2AYPzmVxcRJ1v3dqdqyEGAtE 
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILNCmaqfNc79iOZbqScO8uLDWBhHRMHUAEbUq3/PR9zj 
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH1AN8iuL/4NhkKCXyJnPsiQyU2KkvwoMcUt3nZQFRBf 
 EOF
 # Configuring OpenSSH server settings 
 sudo sed -i.bak \

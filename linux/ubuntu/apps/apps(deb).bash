@@ -17,7 +17,7 @@ install ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( software-properties-common flatpak nala synaptic hydrapaper gnome-shell-extensions gnome-tweaks )
 install ${apps[@]}
-flatpak remote-add --if-not-exists flathub https://flathub.org/
+#flatpak remote-add --if-not-exists flathub https://flathub.org/
 #-----------------------------------------------------------------------
 apps=( putty gnome-terminal tmux vim neovim screen mc lfm htop \
   dnstop iftop iotop zsh powerline fonts-powerline cowsay fortune neofetch \
