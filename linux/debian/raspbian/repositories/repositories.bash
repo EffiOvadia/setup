@@ -1192,7 +1192,7 @@ Signed-By:
  =RGoy
  -----END PGP PUBLIC KEY BLOCK-----
 
-#! Debian Security Updates Repositories
+#! Debian Security Repository
 Name: $(lsb_release -sd) - Security
 Enabled: yes
 Types: deb 
