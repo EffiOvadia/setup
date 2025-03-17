@@ -5,8 +5,8 @@ sudo flatpak install flathub -y us.zoom.Zoom
 #flatpak install flathub -y com.wps.Office
 #flatpak install flathub -y com.slack.Slack
 sudo flatpak install flathub -y com.microsoft.Teams
-sudo #flatpak install flathub -y com.anydesk.Anydesk
 sudo flatpak install flathub -y com.discordapp.Discord
+sudo flatpak install flathub -y org.localsend.localsend_app
 sudo flatpak install flathub -y com.belmoussaoui.Authenticator
 sudo flatpak install flathub -y io.github.mimbrero.WhatsAppDesktop
 sudo flatpak install flathub -y io.gitlab.librewolf-community

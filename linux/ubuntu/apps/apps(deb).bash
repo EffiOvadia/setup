@@ -12,7 +12,7 @@ apps=( f2fs-tools ntfs-3g libfsntfs-utils btrfs-progs dosfstools \
   exfatprogs exfat-fuse zfsutils-linux e2fsck-static xfsprogs hfsutils \
   jfsutils lvm2 udftools gparted gpart gddrescue ethtool clonezilla \
   ddrescueview myrescue safecopy testdisk scalpel foremost ddrutility \ 
-  disktype extlinux wxhexeditor chntpw hdparm ipcalc )
+  disktype extlinux wxhexeditor chntpw hdparm ipcalc smartmontools )
 install ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( software-properties-common flatpak nala synaptic hydrapaper gnome-shell-extensions gnome-tweaks )
@@ -20,18 +20,18 @@ install ${apps[@]}
 #flatpak remote-add --if-not-exists flathub https://flathub.org/
 #-----------------------------------------------------------------------
 apps=( putty gnome-terminal tmux vim neovim screen mc lfm htop \
-  dnstop iftop iotop zsh powerline fonts-powerline cowsay fortune neofetch \
+  dnstop iftop iotop zsh powerline cowsay fortune neofetch \
   ripgrep tldr bat fzf jq zoxide hyperfine glances btop mutt nmap irssi \
   elinks lynx ncal dateutils ncat rxvt-unicode )
 install ${apps[@]}
 #exa
 #-----------------------------------------------------------------------
-apps=( intel-microcode amd64-microcode fwupd )
+apps=( intel-microcode amd64-microcode fwupd cpufrequtils)
 install ${apps[@]}
 update-pciids
 service fwupd start && fwupdmgr refresh && fwupdmgr get-devices && fwupdmgr get-updates && fwupdmgr update
 #-----------------------------------------------------------------------
-apps=( tlp tlp-rdw cpufrequtils )
+apps=( tlp tlp-rdw )
 install ${apps[@]}
 systemctl enable tlp && systemctl start tlp
 tlp-stat
@@ -40,7 +40,6 @@ cpufreq-set -g powersave
 ## Communications apps
 apps=( libreoffice  signal-desktop telegram hexchat )
 install ${apps[@]}
-# skypeforlinux
 #-----------------------------------------------------------------------
 sudo \cat > /etc/apt/preferences.d/mozilla <<-EOF
 # Set higher priority for Mozilla.org Firefox packages
@@ -77,9 +76,9 @@ EOF
 snap remove thunderbird 
 snap remove firefox
 apps=( brave-browser google-chrome-stable microsoft-edge-stable vivaldi-stable \
-  firefox thunderbird kleopatra torbrowser-launcher opera-stable chromium )
+  firefox thunderbird kleopatra torbrowser-launcher chromium )
+#opera-stable
 install ${apps[@]}
-
 #-----------------------------------------------------------------------
 ## Docker
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do apt-get remove $pkg; done
@@ -107,17 +106,19 @@ apps=( darktable inkscape digikam rawtherapee shotwell showfoto krita audacity \
   gimp hugin handbrake blender shotcut vlc ffmpeg )
 install ${apps[@]}
 #-----------------------------------------------------------------------
-apps=( fonts-sil-ezra fonts-sil-lateef fonts-sil-scheherazade fonts-sil-andika \
-  fonts-sil-charis fonts-sil-doulos fonts-firacode fonts-anonymous-pro fonts-lato \
-  fonts-ibm-plex fonts-inconsolata fonts-hack fonts-proggy texlive-fonts-extra \
-  ttf-bitstream-vera fonts-agave fonts-roboto fonts-noto ttf-mscorefonts-installer \
-  fonts-cascadia-code fonts-open-sans fonts-freefont-ttf fonts-liberation2 \
-  fonts-dejavu fonts-jetbrains-mono fonts-mononoki fonts-inter fonts-noto-cjk \
-  culmus typecatcher fonts-sil-gentium )
-  #fonts-source-code-pro
+apps=( ttf-mscorefonts-installer fonts-noto-hinted fonts-noto-cjk fonts-noto-color-emoji \
+       fonts-culmus-fancy fonts-sil-charis fonts-sil-doulos fonts-sil-gentium fonts-sil-ezra \
+       fonts-sil-lateef fonts-sil-scheherazade fonts-sil-abyssinica fonts-sil-andika \
+       fonts-dejavu fonts-liberation fonts-lato fonts-ubuntu fonts-droid-fallback )
+install ${apps[@]}
+apps=( fonts-firacode fonts-anonymous-pro fonts-ibm-plex fonts-inconsolata fonts-hack \
+       fonts-proggy texlive-fonts-extra ttf-bitstream-vera fonts-agave fonts-roboto \
+       fonts-cascadia-code fonts-open-sans fonts-freefont-ttf fonts-liberation2 \
+       fonts-dejavu fonts-jetbrains-mono fonts-mononoki fonts-inter typecatcher \
+       fonts-powerline fonts-terminus )
 install ${apps[@]}
 apps=( openvpn wireguard network-manager-openconnect-gnome openconnect geary \
-  filezilla qbittorrent deluge transmission )
+  filezilla qbittorrent deluge transmission vim-gtk3 )
 install ${apps[@]}
 #-----------------------------------------------------------------------
 ## 
@@ -128,7 +129,7 @@ install ${apps[@]}
 ## Special Hardware drivers and tools
 apps=( solaar yubico-piv-tool yubikey-luks yubikey-manager yubikey-manager-qt \
       yubikey-personalization yubioath-desktop yubioath-desktop libpam-yubico \
-      libpam-u2f )
+      libpam-u2f tabby-terminal wezterm )
 install ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( cloudflare-warp )

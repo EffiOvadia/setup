@@ -16,3 +16,9 @@ sudo rm -fr /snap
 sudo rm -fr /var/snap
 sudo rm -fr /var/lib/snap
 sudo rm -rf /var/cache/snapd/
+
+sudo \cat > /etc/apt/preferences.d/nosnap.pref <<-EOF
+Package: snapd
+Pin: release a=*
+Pin-Priority: -10
+EOF
