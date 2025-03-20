@@ -13,7 +13,6 @@ $Apps =
   [PSCustomObject]@{Name='GitHub Desktop'; ID='GitHub.GitHubDesktop'}
   [PSCustomObject]@{Name='VSCode'; ID='Microsoft.VisualStudioCode'}
   [PSCustomObject]@{Name='VSCodium'; ID='VSCodium.VSCodium'}
-  [PSCustomObject]@{Name='Python'; ID='Python.Python.3.11'}
   [PSCustomObject]@{Name='Cygwin'; ID='Cygwin.Cygwin'}
   [PSCustomObject]@{Name='Neovim'; ID='Neovim.Neovim'}
   [PSCustomObject]@{Name='WinSCP'; ID='WinSCP.WinSCP'}
@@ -26,11 +25,8 @@ $Apps =
   [PSCustomObject]@{Name='Lazygit'; ID='JesseDuffield.lazygit'} 
   [PSCustomObject]@{Name='FarManager'; ID='FarManager.FarManager'}
   [PSCustomObject]@{Name='Wireshark'; ID='WiresharkFoundation.Wireshark'}
-  [PSCustomObject]@{Name='DotNet6'; ID='Microsoft.DotNet.DesktopRuntime.6'}
-  [PSCustomObject]@{Name='DotNet7'; ID='Microsoft.DotNet.DesktopRuntime.7'}
-  
   #[PSCustomObject]@{Name='VMware Workstation Pro'; ID='VMware.WorkstationPro'}
-  #[PSCustomObject]@{Name='VirtualBox'; ID='Oracle.VirtualBox'}
+  [PSCustomObject]@{Name='VirtualBox'; ID='Oracle.VirtualBox'}
   )
 
 foreach ($App in $Apps) 

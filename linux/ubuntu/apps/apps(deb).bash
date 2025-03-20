@@ -38,7 +38,7 @@ tlp-stat
 cpufreq-set -g powersave
 #-----------------------------------------------------------------------
 ## Communications apps
-apps=( libreoffice  signal-desktop telegram hexchat )
+apps=( libreoffice signal-desktop telegram hexchat session-desktop ) 
 install ${apps[@]}
 #-----------------------------------------------------------------------
 sudo \cat > /etc/apt/preferences.d/mozilla <<-EOF
@@ -103,8 +103,9 @@ apps=( onlyoffice-desktopeditors libreoffice teamviewer code keepassxc remmina )
 install ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( darktable inkscape digikam rawtherapee shotwell showfoto krita audacity \
-  gimp hugin handbrake blender shotcut vlc ffmpeg )
+  gimp hugin handbrake shotcut vlc ffmpeg )
 install ${apps[@]}
+# blender
 #-----------------------------------------------------------------------
 apps=( ttf-mscorefonts-installer fonts-noto-hinted fonts-noto-cjk fonts-noto-color-emoji \
        fonts-culmus-fancy fonts-sil-charis fonts-sil-doulos fonts-sil-gentium fonts-sil-ezra \
@@ -127,9 +128,9 @@ install ${apps[@]}
 apps=( ubuntu-restricted-extras  ) 
 install ${apps[@]}
 ## Special Hardware drivers and tools
-apps=( solaar yubico-piv-tool yubikey-luks yubikey-manager yubikey-manager-qt \
+apps=( yubikey-agent yubico-piv-tool yubikey-luks yubikey-manager yubikey-manager-qt \
       yubikey-personalization yubioath-desktop yubioath-desktop libpam-yubico \
-      libpam-u2f tabby-terminal wezterm )
+      libpam-u2f tabby-terminal wezterm solaar helix balena-etcher )
 install ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( cloudflare-warp )

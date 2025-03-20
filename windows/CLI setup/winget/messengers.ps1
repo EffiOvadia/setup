@@ -6,10 +6,9 @@
 ## ----- Communications ----------------------------------
 $Apps = 
   @(
-  [PSCustomObject]@{Name='Skype'; ID='Microsoft.Skype'}
   [PSCustomObject]@{Name='Discord'; ID='Discord.Discord'}
   [PSCustomObject]@{Name='WhatsApp'; ID='WhatsApp.WhatsApp'}
-  [PSCustomObject]@{Name='HexChat'; ID='HexChat.HexChat'}
+  #[PSCustomObject]@{Name='HexChat'; ID='HexChat.HexChat'}
   [PSCustomObject]@{Name='Teams'; ID='Microsoft.Teams'}
   [PSCustomObject]@{Name='Zoom'; ID='Zoom.Zoom'}
   [PSCustomObject]@{Name='Signal'; ID='OpenWhisperSystems.Signal'}

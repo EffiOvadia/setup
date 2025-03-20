@@ -14,3 +14,6 @@ $Apps =
   [PSCustomObject]@{Name='Inkscape'; ID='9PD9BHGLFC7H'}
   [PSCustomObject]@{Name='Gimp'; ID='XPDM27W10192Q0'}
   )
+
+foreach ($App in $Apps) 
+  {winget install --accept-package-agreements --accept-source-agreements --exact --ID $App.ID}
