@@ -6,7 +6,6 @@
 ## ----- Communications ----------------------------------
 $Apps = 
   @(
-  [PSCustomObject]@{Name='Discord'; ID='Discord.Discord'}
   [PSCustomObject]@{Name='WhatsApp'; ID='WhatsApp.WhatsApp'}
   #[PSCustomObject]@{Name='HexChat'; ID='HexChat.HexChat'}
   [PSCustomObject]@{Name='Teams'; ID='Microsoft.Teams'}
@@ -15,7 +14,6 @@ $Apps =
   [PSCustomObject]@{Name='Telegram'; ID='Telegram.TelegramDesktop'}
   [PSCustomObject]@{Name='Facebook'; ID='FACEBOOK.FACEBOOK_8xx8rvfyw5nnt'}
   [PSCustomObject]@{Name='Twitter'; ID='9E2F88E3.TWITTER_wgeqdkkx372wm'}
-  [PSCustomObject]@{Name='WeChat'; ID='Tencent.WeChat'}
   [PSCustomObject]@{Name='LINE'; ID='LINE.LINE'}
   )
 
