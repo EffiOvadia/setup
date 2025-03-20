@@ -92,7 +92,7 @@ Push-Location -path "HKLM:\SOFTWARE\Policies\Microsoft"
 Pop-Location
 
 ## Taskbar alignment
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\" TaskbarAl -Force -Value 1
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\" TaskbarAl -Force -Value 0
 
 ## Disable Network Throttling (default value is 10)
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\" NetworkThrottlingIndex -Force -Value 4294967295 
