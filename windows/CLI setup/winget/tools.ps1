@@ -8,7 +8,7 @@ $Apps =
   @(
   [PSCustomObject]@{Name='Teamviewer'; ID='TeamViewer.TeamViewer'}
   [PSCustomObject]@{Name='RDP'; ID='Microsoft.RemoteDesktopClient'}
-  [PSCustomObject]@{Name='AnyDesk'; ID='AnyDeskSoftwareGmbH.AnyDesk'}
+  #[PSCustomObject]@{Name='AnyDesk'; ID='AnyDeskSoftwareGmbH.AnyDesk'}
   [PSCustomObject]@{Name='Microsoft PowerToys'; ID='Microsoft.Powertoys'}
   [PSCustomObject]@{Name='qBittorrent'; ID='qBittorrent.qBittorrent'}
   [PSCustomObject]@{Name='KeepassXC'; ID='KeePassXCTeam.KeePassXC'}
