@@ -21,6 +21,7 @@ $Apps =
   [PSCustomObject]@{Name='cURL'; ID='cURL.cURL'}
   [PSCustomObject]@{Name='VIM'; ID='vim.vim'}
   [PSCustomObject]@{Name='Gitub'; ID='Git.Git'}
+    [PSCustomObject]@{Name='Helix'; ID='Helix.Helix'}
   [PSCustomObject]@{Name='GitHub.cli'; ID='GitHub.cli'}
   [PSCustomObject]@{Name='Lazygit'; ID='JesseDuffield.lazygit'} 
   [PSCustomObject]@{Name='FarManager'; ID='FarManager.FarManager'}
