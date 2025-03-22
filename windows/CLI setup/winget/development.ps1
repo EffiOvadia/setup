@@ -20,8 +20,8 @@ $Apps =
   [PSCustomObject]@{Name='Wget2'; ID='GNU.Wget2'}
   [PSCustomObject]@{Name='cURL'; ID='cURL.cURL'}
   [PSCustomObject]@{Name='VIM'; ID='vim.vim'}
-  [PSCustomObject]@{Name='Gitub'; ID='Git.Git'}
-    [PSCustomObject]@{Name='Helix'; ID='Helix.Helix'}
+  [PSCustomObject]@{Name='Git'; ID='Git.Git'}
+  [PSCustomObject]@{Name='Helix'; ID='Helix.Helix'}
   [PSCustomObject]@{Name='GitHub.cli'; ID='GitHub.cli'}
   [PSCustomObject]@{Name='Lazygit'; ID='JesseDuffield.lazygit'} 
   [PSCustomObject]@{Name='FarManager'; ID='FarManager.FarManager'}
