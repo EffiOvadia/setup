@@ -13,6 +13,7 @@ $Apps =
   [PSCustomObject]@{Name='GitHub Desktop'; ID='GitHub.GitHubDesktop'}
   [PSCustomObject]@{Name='VSCode'; ID='Microsoft.VisualStudioCode'}
   [PSCustomObject]@{Name='VSCodium'; ID='VSCodium.VSCodium'}
+  [PSCustomObject]@{Name='Obsidian'; ID='Obsidian.Obsidian'}
   [PSCustomObject]@{Name='Cygwin'; ID='Cygwin.Cygwin'}
   [PSCustomObject]@{Name='Neovim'; ID='Neovim.Neovim'}
   [PSCustomObject]@{Name='WinSCP'; ID='WinSCP.WinSCP'}

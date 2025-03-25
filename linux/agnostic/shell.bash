@@ -1,11 +1,8 @@
 #!/bin/bash
 
 # Check for installed interactive shells:
-#cat /etc/shells
-# Check the current shell for a user:
-#grep effio /etc/passwd
-# Change user's shell in /etc/passwd using usermod command:
-#usermod --shell /bin/tmux effio
+cat /etc/shells
+# Change user's shell using usermod command:
+usermod --shell "$(which screen)" $(whoami)
 # Alternativly change users shell via chsh:
-chsh --shell $(which tmux) effio
-# chsh --shell $(which zsh) effio 
+chsh --shell $(which tmux) $(whoami)

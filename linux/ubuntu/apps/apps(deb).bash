@@ -12,10 +12,12 @@ apps=( f2fs-tools ntfs-3g libfsntfs-utils btrfs-progs dosfstools \
   exfatprogs exfat-fuse zfsutils-linux e2fsck-static xfsprogs hfsutils \
   jfsutils lvm2 udftools gparted gpart gddrescue ethtool clonezilla \
   ddrescueview myrescue safecopy testdisk scalpel foremost ddrutility \ 
-  disktype extlinux wxhexeditor chntpw hdparm ipcalc smartmontools )
+  disktype extlinux wxhexeditor chntpw hdparm ipcalc smartmontools \
+  zram-tools zram-config )
 install ${apps[@]}
 #-----------------------------------------------------------------------
-apps=( software-properties-common flatpak nala synaptic hydrapaper gnome-shell-extensions gnome-tweaks )
+apps=( software-properties-common flatpak nala synaptic hydrapaper \
+  gnome-shell-extensions gnome-tweaks bleachbit)
 install ${apps[@]}
 #flatpak remote-add --if-not-exists flathub https://flathub.org/
 #-----------------------------------------------------------------------
@@ -26,7 +28,7 @@ apps=( putty gnome-terminal tmux vim neovim screen mc lfm htop \
 install ${apps[@]}
 #exa
 #-----------------------------------------------------------------------
-apps=( intel-microcode amd64-microcode fwupd cpufrequtils)
+apps=( intel-microcode amd64-microcode fwupd cpufrequtils cpu-x)
 install ${apps[@]}
 update-pciids
 service fwupd start && fwupdmgr refresh && fwupdmgr get-devices && fwupdmgr get-updates && fwupdmgr update

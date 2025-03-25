@@ -16,3 +16,5 @@ sudo flatpak install flathub -y net.waterfox.waterfox               # Waterfox
 sudo flatpak install flathub -y com.bitwarden.desktop               # Bitwarden
 sudo flatpak install flathub -y md.obsidian.Obsidian                # Obsidian
 sudo flatpak install flathub -y com.tencent.WeChat                  # WeChat
+sudo flatpak install flathub -y org.gnome.Boxes                     # GNOME Boxes
+sudo flatpak install flathub -y io.github.thetumultuousunicornofdarkness.cpu-x # CPU-X
