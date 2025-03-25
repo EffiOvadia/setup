@@ -2,7 +2,6 @@
 $RegPath = "HKLM:\Software\Microsoft\Command Processor"
 # Define the path for the startup script
 $ScriptPath = "$env:ProgramData\WindowsTerminalStartup.cmd"
-
 # Check if the "AutoRun" registry key exists and set it to the script path if it doesn't
 if ( !(Get-ItemProperty -Path $RegPath -Name "AutoRun" -ErrorAction SilentlyContinue) ) 
     { Set-ItemProperty -Path $RegPath -Name "AutoRun" -Value "$ScriptPath" }

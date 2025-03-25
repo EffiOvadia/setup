@@ -3,7 +3,8 @@
 #! https://aka.ms/getwinget
 #! ms-windows-store://pdp/?ProductId=9NBLGGH4NNS1
 
-## ----- Communications ----------------------------------
+#! ----- Communications ----------------------------------
+
 $Apps = 
   @(
   #[PSCustomObject]@{Name='Discord'; ID='Discord.Discord'}

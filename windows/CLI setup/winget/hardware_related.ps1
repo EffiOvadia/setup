@@ -3,7 +3,8 @@
 #! https://aka.ms/getwinget
 #! ms-windows-store://pdp/?ProductId=9NBLGGH4NNS1
 
-## ----- 3rdparty tools  -----------------------------------
+#! ----- 3rdparty tools  -----------------------------------
+
 $Apps = 
   @(  
   [PSCustomObject]@{Name='Samsung DeX'; ID='Samsung.DeX'}

@@ -3,7 +3,8 @@
 #! https://aka.ms/getwinget
 #! ms-windows-store://pdp/?ProductId=9NBLGGH4NNS1
 
-## ----- Free Software -----------------------------------
+#! ----- Free Software -----------------------------------
+
 $Apps = 
   @(
   [PSCustomObject]@{Name='Teamviewer'; ID='TeamViewer.TeamViewer'}

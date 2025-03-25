@@ -8,7 +8,3 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Verify the repository
 flatpak remotes
 flatpak update
-
-# ===============================================
-
-

@@ -1,7 +1,7 @@
 #/ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Kernel" obcaseinsensitive -Force -Value 0
-## Display the cuurent windows verion on the bottom left corner of the desktop
+# Display the cuurent windows verion on the bottom left corner of the desktop
 #/ Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" PaintDesktopVersion -Force -Value 1
-## Desktop Icons size and spacing
+# Desktop Icons size and spacing
 Push-Location -Path "HKCU:\Control Panel\Desktop\WindowMetrics"
   Set-ItemProperty -Path . IconSpacing         -Force -Value "-1050"
   Set-ItemProperty -Path . IconVerticalSpacing -Force -Value "-1050"
@@ -13,7 +13,7 @@ Push-Location -Path "HKCU:\Control Panel\Desktop\WindowMetrics"
   Set-ItemProperty -Path . MenuWidth           -Force -Value "-330"
   Set-ItemProperty -Path . BorderWidth         -Force -Value "-15"  
 Pop-Location
-## General Tweaks 
+# General Tweaks 
 Push-Location -path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion"
   #/ leave file & folder name case intact
   Set-ItemProperty -Path ".\Explorer\Advanced" DontPrettyPath -Force -Value 1
@@ -26,12 +26,12 @@ Push-Location -path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion"
   #/ Show the secondes in the taskbar clock
   Set-ItemProperty -Path ".\Explorer\Advanced" ShowSecondsInSystemClock -Force -Value 1
 Pop-Location
-## force Windows to use 100% of your network bandwidth
+# force Windows to use 100% of your network bandwidth
 Push-Location -path "HKLM:\SOFTWARE\Policies\Microsoft"
   if ( -not(Test-Path ".\Psched\") ) { New-Item -Path ".\Psched\" }
   Set-ItemProperty -Path ".\Psched" NonBestEffortLimit -Force -Value 0
 Pop-Location
-## Remove Windows Explorer folder from This Pc and improve appearance
+# Remove Windows Explorer folder from This Pc and improve appearance
 Push-Location -path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer"
   #/ On Toggle the comment and the computer name on mapped network drive drives 
   Set-ItemProperty -Path "..\policies\Explorer" ToggleCommentPosition -Force -Value 1
@@ -55,56 +55,47 @@ Push-Location -path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer"
   if ( Test-Path ".\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" ) 
     { Remove-Item ".\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" }
 Pop-Location
-## NumLock Initial status
+# NumLock Initial status
 New-PSDrive -PSProvider Registry -Name HKU -Root HKEY_USERS
 Set-ItemProperty -Path "HKU:\.DEFAULT\Control Panel\Keyboard\" InitialKeyboardIndicators -Force -Value 2
-## Change Print Screen Key to start snipping tool
+# Change Print Screen Key to start snipping tool
 Set-ItemProperty -Path "HKCU:\Control Panel\Keyboard" PrintScreenKeyForSnippingEnabled -Force -Value 1
-## Disbale Bing Search in Windows 11
+# Disbale Bing Search in Windows 11
 Push-Location -path "HKCU:\Software\Policies\Microsoft\Windows"
   if ( -not(Test-Path ".\Explorer\") ) { New-Item -Path ".\Explorer\" }
   Set-ItemProperty -Path ".\Explorer" DisableSearchBoxSuggestions -Force -Value 1
 Pop-Location
-## Set DELL brand in registry (for DELL laptops only)
+# Set DELL brand in registry (for DELL laptops only)
 #Push-Location -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Store"
   #Set-ItemProperty -Path . OEMID -Force -Value DELL
   #Set-ItemProperty -Path . StoreContentModifier -Force -Value DELL_XPS
 #Pop-Location
-
-## Office Copilot
+# Office Copilot
 Push-Location -path "HKCU:\Software\Microsoft\Office\16.0\Common\ExperimentConfigs\ExternalFeatureOverrides\"
   Set-ItemProperty -Path ".\word"    Microsoft.Office.Word.Copilot    -Force -Value true
   Set-ItemProperty -Path ".\Excel"   Microsoft.Office.Excel.Copilot   -Force -Value true
   Set-ItemProperty -Path ".\OneNote" Microsoft.Office.OneNote.Copilot -Force -Value true
 Pop-Location
-
-## $URI="http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60"
+# $URI="http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60"
 Push-Location -path "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\"
   Set-ItemProperty -Path "." AudienceData  -Force -Value Production::CC
   Set-ItemProperty -Path "." CDNBaseUrl    -Force -Value $URI
   Set-ItemProperty -Path "." UpdateChannel -Force -Value $URI
 Pop-Location
-
-## Disable the Weather/News icon in the Taskbar
+# Disable the Weather/News icon in the Taskbar
 Push-Location -path "HKLM:\SOFTWARE\Policies\Microsoft"
   if ( -not(Test-Path ".\Dsh\") ) { New-Item -Path ".\Dsh\" }
   Set-ItemProperty -Path ".\Dsh" AllowNewsAndInterests -Force -Value 0
 Pop-Location
-
-## Taskbar alignment
+# Taskbar alignment
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\" TaskbarAl -Force -Value 0
-
-## Disable Network Throttling (default value is 10)
+# Disable Network Throttling (default value is 10)
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\" NetworkThrottlingIndex -Force -Value 4294967295 
-
-## Sniping tool 
+# Sniping tool 
 Set-ItemProperty -Path "HKCU:\Control Panel\Keyboard" PrintScreenKeyForSnippingEnabled -Force -Value 1
-
-## Diable Telemetry service
+# Diable Telemetry service
 Set-Service -Name "Connected User Experiences and Telemetry" -Status Stopped -StartupType Disabled -ErrorAction SilentlyContinue
-
-## turn off the "Send optional diagnostic data"
+# turn off the "Send optional diagnostic data"
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" AllowTelemetry -Value 0
-
-## Enable sudo command in PowerShell (inline mode)
+# Enable sudo command in PowerShell (inline mode)
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Sudo" Enabled -Value 3

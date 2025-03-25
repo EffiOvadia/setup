@@ -1,7 +1,7 @@
-## https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1
-## https://github.com/microsoft/winget-cli/releases/latest
-## https://aka.ms/getwinget
-## ms-windows-store://pdp/?ProductId=9NBLGGH4NNS1
+#! https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1
+#! https://github.com/microsoft/winget-cli/releases/latest
+#! https://aka.ms/getwinget
+#! ms-windows-store://pdp/?ProductId=9NBLGGH4NNS1
 
 #! ----- Development -------------------------------------
 
@@ -32,6 +32,7 @@ $Apps =
 
 foreach ($App in $Apps) 
   {winget install --accept-package-agreements --accept-source-agreements --exact --ID $App.ID}
+
 
 #! ----- Set GH_EDITOR for VSCode ------------------------
 
