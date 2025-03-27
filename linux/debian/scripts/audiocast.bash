@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
+# Install bluez & pulseaudio-utils if not installed
+dpkg -s bluez            &> /dev/null || apt install --assume-yes bluez
+dpkg -s pulseaudio-utils &> /dev/null || apt install --assume-yes pulseaudio-utils
 # Create a rule to execute a script when a bluetooth device is connected or disconnected
 echo 'ACTION=="add", SUBSYSTEM=="bluetooth", RUN+="/etc/scripts/bt_audiocast.sh"' > /etc/udev/rules.d/99-bluetooth.rules
 chown root:sudo /etc/udev/rules.d/99-bluetooth.rules
 chmod 644 /etc/udev/rules.d/99-bluetooth.rules
-# Install bluez & pulseaudio-utils if not installed
-dpkg -s bluez            &> /dev/null || apt install --assume-yes bluez
-dpkg -s pulseaudio-utils &> /dev/null || apt install --assume-yes pulseaudio-utils
 # Create folder for scripts if not exists
 [ ! -d /etc/scripts/ ] && mkdir -p /etc/scripts/
 # Create a script to combine all audio sinks into a single sink
@@ -35,4 +35,3 @@ EOF
 chmod 555 /etc/scripts/bt_audiocast.sh
 # Reload the udev rules to apply changes
 udevadm control --reload-rules
-

@@ -28,7 +28,7 @@ apps=( putty gnome-terminal tmux vim neovim screen mc lfm htop \
 install ${apps[@]}
 #exa
 #-----------------------------------------------------------------------
-apps=( intel-microcode amd64-microcode fwupd cpufrequtils cpu-x)
+apps=( fwupd intel-microcode amd64-microcode cpufrequtils cpu-x)
 install ${apps[@]}
 update-pciids
 service fwupd start && fwupdmgr refresh && fwupdmgr get-devices && fwupdmgr get-updates && fwupdmgr update
@@ -147,3 +147,6 @@ nextdns start && systemctl enable nextdns && systemctl status nextdns
 
 apt update
 apt install --install-suggests gnome-software
+
+
+install gir1.2-gtop-2.0

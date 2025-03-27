@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 cat > /etc/systemd/resolved.conf <<-'EOF'
 # Cloudflare:    2606:4700:4700::1112 2606:4700:4700::1002  1.1.1.2        1.0.0.2        
 # Google:        2001:4860:4860::8888 2001:4860:4860::8844  8.8.8.8        8.8.4.4        
@@ -27,7 +29,6 @@ EOF
 
 # Restart systemd-resolved to apply the new DNS configuration
 systemctl restart systemd-resolved
-
 # Display the current status of systemd-resolved
-#resolvectl status
+resolvectl status | awk '/Global/,/^$/'
 #resolvectl statistics
