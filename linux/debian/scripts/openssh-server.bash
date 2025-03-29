@@ -20,22 +20,25 @@ sudo sed -i.bak \
      -e 's/[# ]*Banner \/etc\/issue.net/Banner \/etc\/issue.net/g' \
      -e 's/[# ]*PubkeyAuthentication.*/PubkeyAuthentication yes/g' \
      -e 's/[# ]*PasswordAuthentication.*/PasswordAuthentication no/g' \
-     -e 's/[# ]*PermitRootLogin.*/PermitRootLogin prohibit-password/g' \     
+     -e 's/[# ]*PermitRootLogin.*/PermitRootLogin prohibit-password/g' \
      -e 's/[# ]*AuthorizedKeysFile.*/AuthorizedKeysFile \/etc\/ssh\/authorized_keys .ssh\/authorized_keys /g' \
           /etc/ssh/sshd_config
 # Configuring Fail2Ban
 sudo \cp --force /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
-sudo sed -i.bak \
-     -e 's/[# ]*ignoreip =.*/ignoreip = 127.0.0.1\/8 192.168.0.0\/16/g' \
+sudo sed -i 's/[# ]*ignoreip =.*/ignoreip = 127.0.0.1\/8 192.168.0.0\/16/g' /etc/fail2ban/jail.local
+
      -e 's/[# ]*action = %(action_)s/action = %(action_mw)s/g' \
      -e 's/[# ]*ata = sendmail/mta = mail/g' \
-          /etc/fail2ban/jail.local
+          
 # Create a custom banner for OpenSSH
 sudo bash -c 'echo Welcome to $HOSTNAME > /etc/motd'
 # Restart openssh service and enable it
-sudo systemctl restart ssh.service
 sudo systemctl enable --now ssh
+sudo systemctl restart ssh.service ; sudo systemctl status ssh.service
 # Enable and start fail2ban service
 sudo systemctl enable --now fail2ban
-sudo systemctl restart fail2ban.service
+sudo systemctl restart fail2ban.service ; sudo systemctl status fail2ban.service
 sudo fail2ban-client status sshd
+
+
+#
