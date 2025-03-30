@@ -21,10 +21,14 @@ $Apps =
   [PSCustomObject]@{Name='cURL'; ID='cURL.cURL'}
   [PSCustomObject]@{Name='VIM'; ID='vim.vim'}
   [PSCustomObject]@{Name='Git'; ID='Git.Git'}
+  [PSCustomObject]@{Name='7zip'; ID='7zip.7zip'}
+  [PSCustomObject]@{Name='Yazi'; ID='sxyazi.yazi'}
   [PSCustomObject]@{Name='Helix'; ID='Helix.Helix'}
   [PSCustomObject]@{Name='GitHub.cli'; ID='GitHub.cli'}
+  [PSCustomObject]@{Name='Warp Terminal'; ID='Warp.Warp'}
   [PSCustomObject]@{Name='Lazygit'; ID='JesseDuffield.lazygit'} 
   [PSCustomObject]@{Name='FarManager'; ID='FarManager.FarManager'}
+  [PSCustomObject]@{Name='ImageMagick'; ID='ImageMagick.ImageMagick'}
   [PSCustomObject]@{Name='Wireshark'; ID='WiresharkFoundation.Wireshark'}
   #[PSCustomObject]@{Name='VMware Workstation Pro'; ID='VMware.WorkstationPro'}
   [PSCustomObject]@{Name='VirtualBox'; ID='Oracle.VirtualBox'}
@@ -33,9 +37,9 @@ $Apps =
 foreach ($App in $Apps) 
   {winget install --accept-package-agreements --accept-source-agreements --exact --ID $App.ID}
 
-
 #! ----- Set GH_EDITOR for VSCode ------------------------
 
 if (Get-Command code -ErrorAction SilentlyContinue) 
   {[System.Environment]::SetEnvironmentVariable("GH_EDITOR", "code --wait", "User")}
-    
+
+gh extension install github/gh-copilot
