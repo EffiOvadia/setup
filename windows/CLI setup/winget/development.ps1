@@ -43,3 +43,4 @@ if (Get-Command code -ErrorAction SilentlyContinue)
   {[System.Environment]::SetEnvironmentVariable("GH_EDITOR", "code --wait", "User")}
 
 gh extension install github/gh-copilot
+gh extension install github/gh-autofix
