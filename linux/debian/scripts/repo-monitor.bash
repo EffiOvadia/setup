@@ -35,4 +35,3 @@ sudo systemctl daemon-reload
 # Enable and start the service
 sudo systemctl enable  inotify_monitor.service
 sudo systemctl restart inotify_monitor.service
-

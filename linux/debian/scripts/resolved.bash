@@ -27,6 +27,7 @@ StaleRetentionSec=600
 #LLMNR=no
 EOF
 
+
 # Restart systemd-resolved to apply the new DNS configuration
 systemctl restart systemd-resolved
 # Display the current status of systemd-resolved

@@ -40,5 +40,5 @@ EOF
 sudo dpkg-reconfigure -plow unattended-upgrades
 sudo systemctl enable unattended-upgrades.service
 sudo systemctl restart unattended-upgrades.service
-
+# Test unattended-upgrades and check for errors
 sudo unattended-upgrades --dry-run --debug
