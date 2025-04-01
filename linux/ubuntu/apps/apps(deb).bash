@@ -147,6 +147,3 @@ nextdns start && systemctl enable nextdns && systemctl status nextdns
 
 apt update
 apt install --install-suggests gnome-software
-
-
-install gir1.2-gtop-2.0

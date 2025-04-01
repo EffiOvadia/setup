@@ -4,6 +4,7 @@
 sudo dpkg -s openssh-server >& /dev/null || sudo apt install -y openssh-server
 sudo dpkg -s fail2ban       >& /dev/null || sudo apt install -y fail2ban
 sudo dpkg -s rsync          >& /dev/null || sudo apt install -y rsync
+
 # Create a system wide authorized_keys file
 sudo touch /etc/ssh/authorized_keys
 sudo chmod 600 /etc/ssh/authorized_keys
@@ -26,7 +27,6 @@ sudo sed -i.bak \
 # Configuring Fail2Ban
 sudo \cp --force /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo sed -i 's/[# ]*ignoreip =.*/ignoreip = 127.0.0.1\/8 192.168.0.0\/16/g' /etc/fail2ban/jail.local
-
 # Create a custom banner for OpenSSH
 sudo bash -c 'echo Welcome to $HOSTNAME > /etc/motd'
 # Restart openssh service and enable it
