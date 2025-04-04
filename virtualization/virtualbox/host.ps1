@@ -92,7 +92,7 @@ function CreateVirtualLinux
                 for ($i=1;$i -le $OSList.count; $i++) { Write-Host "$i. $($OSList.name[$i-1])" $menu.Add($i,($OSList[$i-1])) }
                 Write-Host '' ; [int]$selection = Read-Host 'Choose OS Adapter' ; Write-Host '' ; $OS = $menu.Item($selection)
     $NIC        = @( (Get-NetAdapter -Physical | Sort-Object -property name).InterfaceDescription )
-    $BaseFolder = "Z:\Virtual Machines\VirtualBox\VirtualBox VMs"
+    $BaseFolder = "~\VirtualBox VMs"
     $Medium     = $BaseFolder  + "\" + $OS.name + "\" + $OS.name + ".vdi"
     $LUN_Drives = 0
 
