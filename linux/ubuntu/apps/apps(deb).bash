@@ -132,7 +132,9 @@ install ${apps[@]}
 ## Special Hardware drivers and tools
 apps=( yubikey-agent yubico-piv-tool yubikey-luks yubikey-manager yubikey-manager-qt \
       yubikey-personalization yubioath-desktop yubioath-desktop libpam-yubico \
-      libpam-u2f tabby-terminal wezterm solaar helix balena-etcher )
+      libpam-u2f scdaemon scdaemon )
+install ${apps[@]}      
+      ( tabby-terminal wezterm solaar helix balena-etcher )
 install ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( cloudflare-warp )

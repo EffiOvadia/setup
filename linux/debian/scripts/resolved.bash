@@ -11,8 +11,8 @@ cat > /etc/systemd/resolved.conf <<-'EOF'
 # CleanBrowsing: 2a0d:2a00:1::2       2a0d:2a00:2::2        185.228.168.9  185.228.169.9  
 
 [Resolve]
-DNS=2606:4700:4700::1111 2606:4700:4700::1001
-FallbackDNS=1.1.1.1 1.0.0.1 
+DNS=2620:fe::11 2620:fe::fe:11
+FallbackDNS=9.9.9.11 149.112.112.11
 DNSOverTLS=yes
 DNSSEC=yes
 Domains=~.

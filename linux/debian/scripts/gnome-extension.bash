@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo dpkg -s curl &> /dev/null                                          || sudo apt install -y curl
 # Install GNOME Shell Extensions
 sudo dpkg -s gnome-shell-extensions &> /dev/null                        || sudo apt install -y gnome-shell-extensions
 sudo dpkg -s gnome-shell-extension-prefs &> /dev/null                   || sudo apt install -y gnome-shell-extension-prefs
@@ -19,7 +20,12 @@ sudo dpkg -s gnome-shell-extension-light-style &> /dev/null             || sudo 
 sudo dpkg -s gnome-browser-connector &> /dev/null                       || sudo apt install -y gnome-browser-connector
 sudo dpkg -s gnome-tweaks &> /dev/null                                  || sudo apt install -y gnome-tweaks 
  
+
 ## Gnome System extensions
+for ext in $(gnome-extensions list); do gnome-extensions enable "$ext"; done
+for dir in /usr/share/gnome-shell/extensions/*/; do uuid=$(basename "$dir"); gnome-extensions enable "$uuid"; done
+
+
 # list of system extensions to Install and enable (provided by Ubuntu repo)
 EXTENSIONS=(
   "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
@@ -72,6 +78,7 @@ install_extension()
     gnome-extensions install "$uuid.zip"   
     # Enable the extension
     gnome-extensions enable "$uuid"
+    rm "$uuid.zip"
   }
 
 # Install all extensions from the list
