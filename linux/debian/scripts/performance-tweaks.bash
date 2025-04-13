@@ -16,13 +16,6 @@ sudo sed -i.bak \
      -e 's/[# ]*ALGO=.*/ALGO=zstd/g' \
      -e 's/[# ]*PERCENT=.*/PERCENT=50/g' \
           /etc/default/zramswap
-# check zram          
-swapon --show
-# reduce swapiness from the default 60 to 10
-grep -q -e 'vm.swappiness = 10' /etc/sysctl.conf || echo 'vm.swappiness = 10' >> /etc/sysctl.conf
-sudo sysctl vm.swappiness=10
-# check swapiness
-sudo sysctl -p
 # configure zswap if enabled in the kernel
 if ( cat /boot/config-$(uname -r) | grep -i "^CONFIG_ZSWAP=y" ); then
 	{
@@ -40,3 +33,10 @@ if ( cat /boot/config-$(uname -r) | grep -i "^CONFIG_ZSWAP=y" ); then
 		sudo dmesg | grep zswap
 	}
 fi
+#         
+swapon --show
+# reduce swapiness from the default 60 to 10
+grep -q -e 'vm.swappiness = 10' /etc/sysctl.conf || echo 'vm.swappiness = 10' >> /etc/sysctl.conf
+sudo sysctl vm.swappiness=10
+# check swapiness
+sudo sysctl -p

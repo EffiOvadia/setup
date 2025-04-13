@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo dpkg -s curl &> /dev/null || sudo apt install -y curl
+sudo dpkg -s wget &> /dev/null || sudo apt install -y wget
 ## =============================================
 # Determine latest release
 LATEST_RELEASE_URL=$(curl -s https://api.github.com/repos/microsoft/cascadia-code/releases/latest | grep "browser_download_url.*zip" | cut -d '"' -f 4)

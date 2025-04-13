@@ -11,15 +11,21 @@ sudo dpkg -s gnome-shell-extension-desktop-icons-ng &> /dev/null        || sudo 
 sudo dpkg -s gnome-shell-extension-auto-move-windows &> /dev/null       || sudo apt install -y gnome-shell-extension-auto-move-windows
 sudo dpkg -s gnome-shell-extension-launch-new-instance  &> /dev/null    || sudo apt install -y gnome-shell-extension-launch-new-instance 
 sudo dpkg -s gnome-shell-extension-screenshot-window-sizer &> /dev/null || sudo apt install -y gnome-shell-extension-screenshot-window-sizer
+
+sudo dpkg -s gnome-shell-extension-blur-my-shell &> /dev/null           || sudo apt install -y gnome-shell-extension-blur-my-shell
+sudo dpkg -s gnome-shell-extension-easyscreencast &> /dev/null          || sudo apt install -y gnome-shell-extension-easyscreencast 
+sudo dpkg -s gnome-shell-extension-weather &> /dev/null                 || sudo apt install -y gnome-shell-extension-weather
+
 sudo dpkg -s gnome-shell-extension-workspace-indicator &> /dev/null     || sudo apt install -y gnome-shell-extension-workspace-indicator
-sudo dpkg -s gnome-shell-extension-system-monitor &> /dev/null          || sudo apt install -y gnome-shell-extension-system-monitor
-sudo dpkg -s gnome-shell-extension-drive-menu &> /dev/null              || sudo apt install -y gnome-shell-extension-drive-menu
-sudo dpkg -s gnome-shell-extension-apps-menu &> /dev/null               || sudo apt install -y gnome-shell-extension-apps-menu
+sudo dpkg -s gnome-shell-extension-dash-to-dock &> /dev/null            || sudo apt install -y gnome-shell-extension-dash-to-dock
 sudo dpkg -s gnome-shell-extension-places-menu &> /dev/null             || sudo apt install -y gnome-shell-extension-places-menu
 sudo dpkg -s gnome-shell-extension-light-style &> /dev/null             || sudo apt install -y gnome-shell-extension-light-style
+sudo dpkg -s gnome-shell-extension-drive-menu &> /dev/null              || sudo apt install -y gnome-shell-extension-drive-menu
+sudo dpkg -s gnome-shell-extension-apps-menu &> /dev/null               || sudo apt install -y gnome-shell-extension-apps-menu
 sudo dpkg -s gnome-browser-connector &> /dev/null                       || sudo apt install -y gnome-browser-connector
 sudo dpkg -s gnome-tweaks &> /dev/null                                  || sudo apt install -y gnome-tweaks 
- 
+#sudo dpkg -s  &> /dev/null            || sudo apt install -y 
+
 
 ## Gnome System extensions
 for ext in $(gnome-extensions list); do gnome-extensions enable "$ext"; done

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+
 ## Cleaning 
+apt update
+apt install --install-suggests gnome-software
 apps=( gnome-games )
 purge  ${apps[@]}
 ubuntu-report -f send no
@@ -22,8 +25,8 @@ install ${apps[@]}
 #flatpak remote-add --if-not-exists flathub https://flathub.org/
 #-----------------------------------------------------------------------
 apps=( putty gnome-terminal tmux vim neovim screen mc lfm htop \
-  dnstop iftop iotop zsh powerline cowsay fortune neofetch \
-  ripgrep tldr bat fzf jq zoxide hyperfine glances btop mutt nmap irssi \
+  dnstop iftop iotop zsh powerline cowsay fortune ripgrep tldr \
+  bat fzf jq zoxide hyperfine glances btop mutt nmap irssi \
   elinks lynx ncal dateutils ncat rxvt-unicode )
 install ${apps[@]}
 #exa
@@ -109,17 +112,7 @@ apps=( darktable inkscape digikam rawtherapee shotwell showfoto krita audacity \
 install ${apps[@]}
 # blender
 #-----------------------------------------------------------------------
-apps=( ttf-mscorefonts-installer fonts-noto-hinted fonts-noto-cjk fonts-noto-color-emoji \
-       fonts-culmus-fancy fonts-sil-charis fonts-sil-doulos fonts-sil-gentium fonts-sil-ezra \
-       fonts-sil-lateef fonts-sil-scheherazade fonts-sil-abyssinica fonts-sil-andika \
-       fonts-dejavu fonts-liberation fonts-lato fonts-ubuntu fonts-droid-fallback )
-install ${apps[@]}
-apps=( fonts-firacode fonts-anonymous-pro fonts-ibm-plex fonts-inconsolata fonts-hack \
-       fonts-proggy texlive-fonts-extra ttf-bitstream-vera fonts-agave fonts-roboto \
-       fonts-cascadia-code fonts-open-sans fonts-freefont-ttf fonts-liberation2 \
-       fonts-dejavu fonts-jetbrains-mono fonts-mononoki fonts-inter typecatcher \
-       fonts-powerline fonts-terminus )
-install ${apps[@]}
+
 apps=( openvpn wireguard network-manager-openconnect-gnome openconnect geary \
   filezilla qbittorrent deluge transmission vim-gtk3 )
 install ${apps[@]}
@@ -147,5 +140,4 @@ install ${apps[@]}
 nextdns install && nextdns config set -config $ID && nextdns config
 nextdns start && systemctl enable nextdns && systemctl status nextdns
 
-apt update
-apt install --install-suggests gnome-software
+
