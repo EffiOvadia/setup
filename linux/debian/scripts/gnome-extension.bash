@@ -11,13 +11,7 @@ sudo dpkg -s gnome-shell-extension-desktop-icons-ng &> /dev/null        || sudo 
 sudo dpkg -s gnome-shell-extension-auto-move-windows &> /dev/null       || sudo apt install -y gnome-shell-extension-auto-move-windows
 sudo dpkg -s gnome-shell-extension-launch-new-instance  &> /dev/null    || sudo apt install -y gnome-shell-extension-launch-new-instance 
 sudo dpkg -s gnome-shell-extension-screenshot-window-sizer &> /dev/null || sudo apt install -y gnome-shell-extension-screenshot-window-sizer
-
-sudo dpkg -s gnome-shell-extension-blur-my-shell &> /dev/null           || sudo apt install -y gnome-shell-extension-blur-my-shell
-sudo dpkg -s gnome-shell-extension-easyscreencast &> /dev/null          || sudo apt install -y gnome-shell-extension-easyscreencast 
-sudo dpkg -s gnome-shell-extension-weather &> /dev/null                 || sudo apt install -y gnome-shell-extension-weather
-
 sudo dpkg -s gnome-shell-extension-workspace-indicator &> /dev/null     || sudo apt install -y gnome-shell-extension-workspace-indicator
-sudo dpkg -s gnome-shell-extension-dash-to-dock &> /dev/null            || sudo apt install -y gnome-shell-extension-dash-to-dock
 sudo dpkg -s gnome-shell-extension-places-menu &> /dev/null             || sudo apt install -y gnome-shell-extension-places-menu
 sudo dpkg -s gnome-shell-extension-light-style &> /dev/null             || sudo apt install -y gnome-shell-extension-light-style
 sudo dpkg -s gnome-shell-extension-drive-menu &> /dev/null              || sudo apt install -y gnome-shell-extension-drive-menu
@@ -100,3 +94,8 @@ gsettings set org.gnome.shell.extensions.system-monitor show-download true
 # org.gnome.shell.extensions.workspace-indicator
 gsettings set org.gnome.shell.extensions.workspace-indicator embed-previews false
 ## ========================================================================== ##
+
+
+
+
+

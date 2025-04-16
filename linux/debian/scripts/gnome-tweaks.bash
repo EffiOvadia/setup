@@ -25,8 +25,12 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Yaru-red-dark'
 gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
 gsettings set org.gnome.shell.extensions.user-theme name 'Adwaita'
+# Set Gnome's to Default fonts (Adwaita):
 gsettings set org.gnome.desktop.interface font-name "Adwaita Sans 11"
 gsettings set org.gnome.desktop.interface monospace-font-name "Adwaita Mono 11"
+# Reset Gnome to OS's default (e.g. Ubuntu uses Ubuntu Sans and Ubuntu Sans Mono):
+#gsettings reset org.gnome.desktop.interface font-name
+#gsettings reset org.gnome.desktop.interface monospace-font-name
 # Text Scaling Factor:
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.0
 # Laptop Lid Close Behavior (nothing, suspend, hibernate, shutdown):

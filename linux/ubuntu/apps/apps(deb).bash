@@ -107,10 +107,10 @@ apps=( onlyoffice-desktopeditors libreoffice teamviewer code keepassxc remmina )
 #dropbox)
 install ${apps[@]}
 #-----------------------------------------------------------------------
-apps=( darktable inkscape digikam rawtherapee shotwell showfoto krita audacity \
-  gimp hugin handbrake shotcut vlc ffmpeg )
-install ${apps[@]}
-# blender
+  apps=( darktable inkscape digikam rawtherapee shotwell showfoto krita audacity \
+    gimp hugin handbrake shotcut vlc ffmpeg )
+  install ${apps[@]}
+  # blender
 #-----------------------------------------------------------------------
 
 apps=( openvpn wireguard network-manager-openconnect-gnome openconnect geary \
@@ -127,7 +127,7 @@ apps=( yubikey-agent yubico-piv-tool yubikey-luks yubikey-manager yubikey-manage
       yubikey-personalization yubioath-desktop yubioath-desktop libpam-yubico \
       libpam-u2f scdaemon scdaemon )
 install ${apps[@]}      
-      ( tabby-terminal wezterm solaar helix balena-etcher )
+apps=(  tabby-terminal wezterm solaar helix balena-etcher )
 install ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( cloudflare-warp )
