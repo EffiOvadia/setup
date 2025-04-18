@@ -103,7 +103,7 @@ install ${apps[@]}
 # /usr/share/virtualbox/VBoxGuestAdditions.iso
 #-----------------------------------------------------------------------
 ## Desktop Productivity/Office applications
-apps=( onlyoffice-desktopeditors libreoffice teamviewer code keepassxc remmina )
+apps=( onlyoffice-desktopeditors libreoffice code keepassxc remmina )
 #dropbox)
 install ${apps[@]}
 #-----------------------------------------------------------------------
