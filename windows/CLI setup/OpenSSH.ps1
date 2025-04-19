@@ -99,6 +99,3 @@ if ([System.Environment]::GetEnvironmentVariable('SSH_AUTH_SOCK') -eq $null)
     ## Display the stored value of "SSH_AUTH_SOCK"
     [System.Environment]::GetEnvironmentVariable('SSH_AUTH_SOCK')
   }
-
-
-

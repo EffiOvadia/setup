@@ -97,7 +97,7 @@ Signed-By:
 EOF
 
 dpkg -s nala >& /dev/null || sudo apt install --assume-yes nala 
-sudo \cat > /etc/apt/sources.list.d/nala.sources <<-EOF
+sudo \cat > /etc/apt/sources.list.d/mirrors.sources <<-EOF
 #! Mirrors for Canonical Official Repositories
 Name: Mirrors for $(lsb_release -sd) $(lsb_release -sc)
 Enabled: yes
