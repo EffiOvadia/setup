@@ -80,8 +80,9 @@ EOF
 ## Internet Browsers, eMail Client  
 snap remove thunderbird 
 snap remove firefox
-apps=( brave-browser google-chrome-stable microsoft-edge-stable vivaldi-stable \
-  firefox thunderbird kleopatra torbrowser-launcher chromium )
+apps=( thunderbird kleopatra )
+install ${apps[@]}
+apps=( brave-browser google-chrome-stable microsoft-edge-stable vivaldi-stable firefox torbrowser-launcher chromium )
 #opera-stable
 install ${apps[@]}
 #-----------------------------------------------------------------------

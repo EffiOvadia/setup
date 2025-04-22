@@ -96,7 +96,7 @@ Signed-By:
  -----END PGP PUBLIC KEY BLOCK-----
 EOF
 
-dpkg -s nala >& /dev/null || sudo apt install --assume-yes nala 
+#dpkg -s nala >& /dev/null || sudo apt install --assume-yes nala 
 sudo \cat > /etc/apt/sources.list.d/mirrors.sources <<-EOF
 #! Mirrors for Canonical Official Repositories
 Name: Mirrors for $(lsb_release -sd) $(lsb_release -sc)
