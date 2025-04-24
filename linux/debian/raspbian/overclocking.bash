@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-sed -i 's/[# ]*arm_freq=.*/arm_freq=1750/g' /boot/config.txt
-
-over_voltage=2
+sudo \cat >> /boot/firmware/config.txt <<-'EOF'
+arm_freq=2000
+gpu_freq=600
+over_voltage=6
+arm_freq_min=600
+EOF
 
 watch -n 1 vcgencmd measure_clock arm
-
 
 ### check clock speed
 vcgencmd measure_clock arm
@@ -15,4 +17,3 @@ vcgencmd measure_temp
 vcgencmd measure_volts
 ### check if the system throttled
 vcgencmd get_throttled
-

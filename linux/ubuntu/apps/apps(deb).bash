@@ -86,11 +86,7 @@ apps=( brave-browser google-chrome-stable microsoft-edge-stable vivaldi-stable f
 #opera-stable
 install ${apps[@]}
 #-----------------------------------------------------------------------
-## Docker
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do apt-get remove $pkg; done
-apps=( docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin )
-install ${apps[@]}
-docker run hello-world
+
 ## Development tools, Shell & Emulators
 apps=( build-essential module-assistant linux-headers-$(uname -r) autoconf gcc \
   git git-all gitk git-gui meld wireshark )
