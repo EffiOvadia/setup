@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## Some usefull FlatPak apps to install
-sudo flatpak install -y flathub com.rustdesk.RustDesk       # RustDesk
+sudo flatpak install -y com.rustdesk.RustDesk               # RustDesk
 sudo flatpak install -y us.zoom.Zoom                        # Zoom
 sudo flatpak install -y com.wps.Office                      # WPS Office
 sudo flatpak install -y com.slack.Slack                     # Slack
@@ -11,9 +11,7 @@ sudo flatpak install -y org.chromium.Chromium               # Chromium
 sudo flatpak install -y eu.betterbird.Betterbird            # Betterbird
 sudo flatpak install -y org.localsend.localsend_app         # LocalSend 
 sudo flatpak install -y io.gitlab.librewolf-community       # LibreWolf
-sudo flatpak install -y io.github.mimbrero.WhatsAppDesktop  # WhatsApp 
 sudo flatpak install -y org.raspberrypi.rpi-imager          # Raspberry Pi Imager
-sudo flatpak install -y io.github.shiftey.Desktop           # GitHub Desktop
 sudo flatpak install -y com.github.tchx84.Flatseal          # Flatseal
 sudo flatpak install -y net.cozic.joplin_desktop            # Joplin
 sudo flatpak install -y com.discordapp.Discord              # Discord
@@ -24,8 +22,8 @@ sudo flatpak install -y com.tencent.WeChat                  # WeChat
 sudo flatpak install -y me.proton.Mail                      # ProtonMail 
 sudo flatpak install -y org.gnome.Boxes                     # GNOME Boxes
 sudo flatpak install -y com.tutanota.Tutanota               # Tutanota
-sudo flatpak install -y io.github.thetumultuousunicornofdarkness.cpu-x # CPU-X
 
 
-
+#sudo flatpak install -y io.github.mimbrero.WhatsAppDesktop  # WhatsApp
+#sudo flatpak install -y io.github.shiftey.Desktop           # GitHub Desktop
 sudo flatpak info com.rustdesk.RustDesk

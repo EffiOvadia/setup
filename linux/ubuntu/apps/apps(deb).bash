@@ -36,10 +36,11 @@ install ${apps[@]}
 update-pciids
 service fwupd start && fwupdmgr refresh && fwupdmgr get-devices && fwupdmgr get-updates && fwupdmgr update
 #-----------------------------------------------------------------------
-apps=( tlp tlp-rdw )
-install ${apps[@]}
-systemctl enable tlp && systemctl start tlp
-tlp-stat
+# The TLP app for older lenovo laptops
+#apps=( tlp tlp-rdw )
+#install ${apps[@]}
+#systemctl enable tlp && systemctl start tlp
+#tlp-stat
 cpufreq-set -g powersave
 #-----------------------------------------------------------------------
 ## Communications apps
