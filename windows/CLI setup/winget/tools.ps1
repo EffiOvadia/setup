@@ -7,6 +7,7 @@
 
 $Apps = 
   @(
+  [PSCustomObject]@{Name='RustDesk'; ID='RustDesk.RustDesk'}
   [PSCustomObject]@{Name='Teamviewer'; ID='TeamViewer.TeamViewer'}
   [PSCustomObject]@{Name='RDP'; ID='Microsoft.RemoteDesktopClient'}
   #[PSCustomObject]@{Name='AnyDesk'; ID='AnyDeskSoftwareGmbH.AnyDesk'}

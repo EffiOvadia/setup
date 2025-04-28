@@ -19,8 +19,7 @@ apps=( f2fs-tools ntfs-3g libfsntfs-utils btrfs-progs dosfstools \
   zram-tools zram-config )
 install ${apps[@]}
 #-----------------------------------------------------------------------
-apps=( software-properties-common flatpak nala synaptic hydrapaper \
-  gnome-shell-extensions gnome-tweaks bleachbit)
+apps=( software-properties-common flatpak nala synaptic bleachbit)
 install ${apps[@]}
 #flatpak remote-add --if-not-exists flathub https://flathub.org/
 #-----------------------------------------------------------------------
@@ -32,7 +31,7 @@ install ${apps[@]}
 #exa
 #-----------------------------------------------------------------------
 apps=( fwupd intel-microcode amd64-microcode cpufrequtils cpu-x)
-install ${apps[@]}
+sudo apt install ${apps[@]}
 update-pciids
 service fwupd start && fwupdmgr refresh && fwupdmgr get-devices && fwupdmgr get-updates && fwupdmgr update
 #-----------------------------------------------------------------------
@@ -45,53 +44,18 @@ cpufreq-set -g powersave
 #-----------------------------------------------------------------------
 ## Communications apps
 apps=( libreoffice signal-desktop telegram hexchat session-desktop ) 
-install ${apps[@]}
+sudo apt install ${apps[@]}
 #-----------------------------------------------------------------------
-sudo \cat > /etc/apt/preferences.d/mozilla <<-EOF
-# Set higher priority for Mozilla.org Firefox packages
-Package: firefox*
-Pin: origin packages.mozilla.org
-Pin-Priority: 1001
+apps=( brave-browser google-chrome-stable microsoft-edge-stable vivaldi-stable torbrowser-launcher opera-stable )
+sudo apt install ${apps[@]}
 
-# Set higher priority for MozillaTeamPPA firefox packages
-Package: firefox*
-Pin: release o=LP-PPA-mozillateam
-Pin-Priority: 1001
-
-# Set higher priority for MozillaTeamPPA Thunderbird packages
-Package: thunderbird*
-Pin: release o=LP-PPA-mozillateam
-Pin-Priority: 1001
-
-# Set lower priority for Canonical firefox (snap) packages
-Package: firefox*
-Pin: release o=Ubuntu
-Pin-Priority: -1
-
-# Set lower priority for Canonical thunderbird (snap) packages
-Package: thunderbird*
-Pin: release o=Ubuntu
-Pin-Priority: -1
-EOF
-
-sudo \cat > /etc/apt/apt.conf.d/51unattended-upgrades-thunderbird <<-EOF
-Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";
-EOF
-
-## Internet Browsers, eMail Client  
-snap remove thunderbird 
-snap remove firefox
-apps=( thunderbird kleopatra )
-install ${apps[@]}
-apps=( brave-browser google-chrome-stable microsoft-edge-stable vivaldi-stable firefox torbrowser-launcher chromium )
-#opera-stable
-install ${apps[@]}
+kleopatra
 #-----------------------------------------------------------------------
 
 ## Development tools, Shell & Emulators
 apps=( build-essential module-assistant linux-headers-$(uname -r) autoconf gcc \
   git git-all gitk git-gui meld wireshark )
-install ${apps[@]}
+sudo apt install ${apps[@]}
 #-----------------------------------------------------------------------
 #apps=( virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso)
 #install ${apps[@]}
@@ -103,20 +67,17 @@ install ${apps[@]}
 ## Desktop Productivity/Office applications
 apps=( onlyoffice-desktopeditors libreoffice code keepassxc remmina )
 #dropbox)
-install ${apps[@]}
+sudo apt install ${apps[@]}
 #-----------------------------------------------------------------------
-  apps=( darktable inkscape digikam rawtherapee shotwell showfoto krita audacity \
-    gimp hugin handbrake shotcut vlc ffmpeg )
-  install ${apps[@]}
+apps=( darktable inkscape digikam rawtherapee shotwell showfoto krita audacity \
+  gimp hugin handbrake shotcut vlc ffmpeg )
+sudo apt install ${apps[@]}
   # blender
 #-----------------------------------------------------------------------
-
 apps=( openvpn wireguard network-manager-openconnect-gnome openconnect geary \
   filezilla qbittorrent deluge transmission vim-gtk3 )
-install ${apps[@]}
+sudo apt install ${apps[@]}
 #-----------------------------------------------------------------------
-## 
-
 ## Ubuntu media codecs and players
 apps=( ubuntu-restricted-extras  ) 
 install ${apps[@]}
@@ -124,9 +85,9 @@ install ${apps[@]}
 apps=( yubikey-agent yubico-piv-tool yubikey-luks yubikey-manager yubikey-manager-qt \
       yubikey-personalization yubioath-desktop yubioath-desktop libpam-yubico \
       libpam-u2f scdaemon scdaemon )
-install ${apps[@]}      
-apps=(  tabby-terminal wezterm solaar helix balena-etcher )
-install ${apps[@]}
+sudo apt install ${apps[@]}      
+apps=( tabby-terminal wezterm solaar helix balena-etcher )
+sudo apt install ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( cloudflare-warp )
 install ${apps[@]}
@@ -137,5 +98,3 @@ apps=( nextdns )
 install ${apps[@]}
 nextdns install && nextdns config set -config $ID && nextdns config
 nextdns start && systemctl enable nextdns && systemctl status nextdns
-
-

@@ -30,10 +30,8 @@ sudo sed -i 's/[# ]*ignoreip =.*/ignoreip = 127.0.0.1\/8 192.168.0.0\/16/g' /etc
 # Create a custom banner for OpenSSH
 sudo bash -c 'echo Welcome to $HOSTNAME > /etc/motd'
 # Restart openssh service and enable it
-sudo systemctl enable --now ssh
-sudo systemctl status ssh.service
+sudo systemctl enable --now ssh      || sudo systemctl status ssh.service
 # Enable and start fail2ban service
-sudo systemctl enable --now fail2ban
-sudo systemctl status fail2ban.service
+sudo systemctl enable --now fail2ban || sudo systemctl status fail2ban.service
 # Check the status of fail2ban
 sudo fail2ban-client status sshd

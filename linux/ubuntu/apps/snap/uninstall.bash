@@ -22,3 +22,4 @@ Package: snapd
 Pin: release a=*
 Pin-Priority: -10
 EOF
+

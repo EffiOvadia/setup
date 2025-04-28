@@ -2,6 +2,8 @@
 
 ## Some usefull FlatPak apps to install
 sudo flatpak install -y com.rustdesk.RustDesk               # RustDesk
+sudo flatpak install -y org.localsend.localsend_app         # LocalSend 
+
 sudo flatpak install -y us.zoom.Zoom                        # Zoom
 sudo flatpak install -y com.wps.Office                      # WPS Office
 sudo flatpak install -y com.slack.Slack                     # Slack
@@ -9,7 +11,6 @@ sudo flatpak install -y com.microsoft.Teams                 # Microsoft Teams
 sudo flatpak install -y io.github.sxyazi.yazi               # Yazi filemanager
 sudo flatpak install -y org.chromium.Chromium               # Chromium
 sudo flatpak install -y eu.betterbird.Betterbird            # Betterbird
-sudo flatpak install -y org.localsend.localsend_app         # LocalSend 
 sudo flatpak install -y io.gitlab.librewolf-community       # LibreWolf
 sudo flatpak install -y org.raspberrypi.rpi-imager          # Raspberry Pi Imager
 sudo flatpak install -y com.github.tchx84.Flatseal          # Flatseal
