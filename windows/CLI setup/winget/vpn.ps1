@@ -7,10 +7,12 @@
 
 $Apps = 
   @(
-  [PSCustomObject]@{Name='ProtonVPN'; ID='ProtonTechnologies.ProtonVPN'}
+  #[PSCustomObject]@{Name='ProtonVPN'; ID='ProtonTechnologies.ProtonVPN'}
   [PSCustomObject]@{Name='OpenVPN'; ID='OpenVPNTechnologies.OpenVPN'}
-  [PSCustomObject]@{Name='Cloudflare Warp'; ID='Cloudflare.Warp'}
+  #[PSCustomObject]@{Name='Cloudflare Warp'; ID='Cloudflare.Warp'}
   [PSCustomObject]@{Name='WireGuard'; ID='WireGuard.WireGuard'}
+  #[PSCustomObject]@{Name='Tutanota'; ID='Tutanota.Tutanota'}
+  #[PSCustomObject]@{Name='OutlineManager'; ID='Jigsaw.OutlineManager'}
   )
 
 foreach ($App in $Apps) 

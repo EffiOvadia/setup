@@ -31,7 +31,7 @@ $Apps =
   [PSCustomObject]@{Name='FarManager'; ID='FarManager.FarManager'}
   [PSCustomObject]@{Name='ImageMagick'; ID='ImageMagick.ImageMagick'}
   [PSCustomObject]@{Name='Wireshark'; ID='WiresharkFoundation.Wireshark'}
-  #[PSCustomObject]@{Name='VMware Workstation Pro'; ID='VMware.WorkstationPro'}
+  [PSCustomObject]@{Name='VMware Workstation Pro'; ID='VMware.WorkstationPro'}
   [PSCustomObject]@{Name='VirtualBox'; ID='Oracle.VirtualBox'}
   )
 
