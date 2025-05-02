@@ -13,7 +13,8 @@ nvram set lan_domain="$ClientID.Local"
 nvram set dhcp_start="192.168.$OctetRange.20"
 nvram set dhcp_end="192.168.$OctetRange.220"
 nvram set dhcp_static_x="1"
-nvram set ASUS_EULA="1"
+nvram set ASUS_EULA=1
+nvram set ASUS_NEW_EULA=1
 nvram set AllLED="1"
 
 ### DDNS Configuration ###
