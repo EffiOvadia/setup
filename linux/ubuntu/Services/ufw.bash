@@ -53,19 +53,26 @@ title=Network File System version 4
 description=NFSv4 allows a system to share directories and files with others over a network using TCP port 2049.
 ports=2049/tcp
 EOF
+sudo cat > /etc/ufw/applications.d/rustdesk <<-'EOF'
+[RustDesk]
+title=RustDesk Server
+description=Remote Control Software
+ports=2116/udp|2115:2119/tcp
+EOF
 # reset and configure firewall
 sudo ufw reset
 sudo ufw disable
 sudo ufw default allow outgoing
 sudo ufw default deny incoming
 sudo ufw app update all 
-sudo ufw allow from any to 0.0.0.0/0 app  DNS       comment "DNS"
+#sudo ufw allow from any to 0.0.0.0/0 app  DNS       comment "DNS"
 sudo ufw allow from any to 0.0.0.0/0 app  NFSv4     comment "NFSv4"
 sudo ufw allow from any to 0.0.0.0/0 app  Samba     comment "Samba"
 sudo ufw allow from any to 0.0.0.0/0 app  OpenSSH   comment "OpenSSH"
-sudo ufw allow from any to 0.0.0.0/0 app  OpenVPN   comment "OpenVPN"
-sudo ufw allow from any to 0.0.0.0/0 app  WireGuard comment "WireGuard"
-sudo ufw allow from any to 0.0.0.0/0 app  UniFi     comment "UniFi"
+#sudo ufw allow from any to 0.0.0.0/0 app  OpenVPN   comment "OpenVPN"
+sudo ufw allow from any to 0.0.0.0/0 app  RustDesk  comment "RustDesk"
+#sudo ufw allow from any to 0.0.0.0/0 app  WireGuard comment "WireGuard"
+#sudo ufw allow from any to 0.0.0.0/0 app  UniFi     comment "UniFi"
 sudo ufw logging on
 sudo ufw enable
 sudo ufw status verbose

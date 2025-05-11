@@ -98,3 +98,7 @@ apps=( nextdns )
 install ${apps[@]}
 nextdns install && nextdns config set -config $ID && nextdns config
 nextdns start && systemctl enable nextdns && systemctl status nextdns
+
+
+ubuntu-drivers list
+ubuntu-drivers install
