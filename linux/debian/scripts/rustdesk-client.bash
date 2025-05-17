@@ -6,8 +6,7 @@ sudo mkdir -p ~/.var/app/com.rustdesk.RustDesk/config/rustdesk
 
 # Write the configuration
 sudo cat <<EOF | sudo tee ~/.var/app/com.rustdesk.RustDesk/config/rustdesk/RustDesk2.toml ~/.config/rustdesk/RustDesk2.toml
-rendezvous_server = 'ovadia.asuscomm.com:21116'
-trusted_devices = '00n6yV65Lo+OmUjZGdaoti+Vlg'
+rendezvous_server = '172.232.211.116:21116'
 nat_type = 1
 serial = 0
 unlock_pin = ''
@@ -18,9 +17,9 @@ direct-server = 'Y'
 access-mode = 'full'
 allow-auto-disconnect = 'Y'
 auto-disconnect-timeout = '10'
-relay-server = 'ovadia.asuscomm.com'
-custom-rendezvous-server = 'ovadia.asuscomm.com'
-key = 'tlGkA0LPFeA3yMD4Y5FXLEMYnJOkLImW4UdiFtnUanQ='
+relay-server = '172.232.211.116'
+custom-rendezvous-server = '172.232.211.116'
+key = 'FGnqzqGE19xjRrIkoWCoLTOfKJtKh06dLYRmnzOjJRs='
 verification-method = 'use-permanent-password'
 allow-remove-wallpaper = 'Y'
 allow-linux-headless = 'Y'

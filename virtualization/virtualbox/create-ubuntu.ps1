@@ -1,7 +1,7 @@
 
 $BaseFolder  = [System.IO.Path]::Combine($ENV:USERPROFILE,"VirtualBox VMs")
 $NICs        = Get-NetAdapter -Physical | Where-Object {$_.MediaType -ne 'Native 802.11'}
-$OS          = [pscustomobject]@{Name='Kali'; Type='Debian_64'; ISO="V:\ISO\kali\kali-linux-2025.1c-installer-netinst-amd64.iso" }
+$OS          = [pscustomobject]@{Name='AnduinOS'; Type='Debian_64'; ISO="V:\ISO\AnduinOS\AnduinOS-1.3.1-en_US.iso" }
 $description = ( Get-Culture).TextInfo.ToTitleCase(([System.IO.Path]::GetFileNameWithoutExtension($OS.ISO) -replace "live", "") -split "-" )
 ## Temporarly  add the virtual box folder to the path 
 if ( $env:Path -notmatch [regex]::Escape("$env:ProgramFiles\Oracle\VirtualBox\\") ) 

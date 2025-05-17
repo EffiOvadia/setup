@@ -7,6 +7,7 @@ chown effio:sudo /home/public -R
 
 if [ -d /home/public ]; then 
 \cat >> /etc/samba/smb.conf <<-EOF
+
 [Public]
    comment = Public folders
    path = /home/public
@@ -20,6 +21,7 @@ fi
 
 if [ -d /home/effio ]; then
 \cat >> /etc/samba/smb.conf <<-EOF
+
 [Effi Ovadia]
    comment = Effi Ovadia home folder
    path = /home/effio
@@ -31,6 +33,7 @@ fi
 
 if [ -d /archive ]; then
 \cat >> /etc/samba/smb.conf <<-EOF
+
 [Archive]
    comment = Archive
    path = /archive
@@ -44,6 +47,7 @@ fi
 
 if [ -d /home/ultrabase ]; then
 \cat >> /etc/samba/smb.conf <<-EOF
+
 [UltraBase]
    comment = UltraBase
    path = /ultrabase
