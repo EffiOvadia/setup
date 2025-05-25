@@ -102,7 +102,7 @@ sudo \cat > /etc/apt/sources.list.d/mirrors.sources <<-EOF
 Name: Mirrors for $(lsb_release -sd) $(lsb_release -sc)
 Enabled: yes
 Types: deb
-URIs: http://mirror.il.kamatera.com/ubuntu/ http://mirror.il-jr.kamatera.com/ubuntu/ http://mirror.il-rh.kamatera.com/ubuntu/
+URIs: https://mirror.isoc.org.il/pub/ubuntu/ https://ubuntu-archive.interhost.co.il/ubuntu/
 Suites: $(lsb_release -sc) $(lsb_release -sc)-updates $(lsb_release -sc)-security $(lsb_release -sc)-backports
 Components: main restricted universe multiverse
 Architectures: $(dpkg --print-architecture)
