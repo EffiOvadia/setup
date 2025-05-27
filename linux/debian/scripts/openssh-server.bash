@@ -17,6 +17,8 @@ EOF
 sudo sed -i.bak \
      -e 's/[# ]*UseDNS.*/UseDNS no/g' \
      -e 's/[# ]*GatewayPorts.*/GatewayPorts yes/g' \
+     -e 's/[# ]*ClientAliveInterval.*/ClientAliveInterval 15/g' \
+     -e 's/[# ]*ClientAliveCountMax.*/ClientAliveCountMax 12/g' \
      -e 's/[# ]*PermitEmptyPasswords.*/PermitEmptyPasswords no/g' \
      -e 's/[# ]*Banner \/etc\/issue.net/Banner \/etc\/issue.net/g' \
      -e 's/[# ]*PubkeyAuthentication.*/PubkeyAuthentication yes/g' \
