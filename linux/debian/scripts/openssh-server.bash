@@ -6,13 +6,12 @@ sudo dpkg -s fail2ban       >& /dev/null || sudo apt install -y fail2ban
 sudo dpkg -s rsync          >& /dev/null || sudo apt install -y rsync
 
 # Create a system wide authorized_keys file
-sudo touch /etc/ssh/authorized_keys
-sudo chmod 600 /etc/ssh/authorized_keys
-sudo chown root:root /etc/ssh/authorized_keys
-sudo \cat > /etc/ssh/authorized_keys <<-'EOF'
+#install -m 600 /dev/stdin /etc/ssh/authorized_keys <<< 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMh4Cm/ipoAhQj3+8I6z2AYPzmVxcRJ1v3dqdqyEGAtE'
+sudo tee /etc/ssh/authorized_keys > /dev/null <<EOF
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMh4Cm/ipoAhQj3+8I6z2AYPzmVxcRJ1v3dqdqyEGAtE 
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILNCmaqfNc79iOZbqScO8uLDWBhHRMHUAEbUq3/PR9zj 
 EOF
+sudo chmod 600 /etc/ssh/authorized_keys
 # Configuring OpenSSH server settings 
 sudo sed -i.bak \
      -e 's/[# ]*UseDNS.*/UseDNS no/g' \

@@ -9,6 +9,11 @@ Package: firefox*
 Pin: origin packages.mozilla.org
 Pin-Priority: 1001
 
+# Set higher priority for Mozilla.org Firefox packages
+Package: thunderbird*
+Pin: origin packages.mozilla.org
+Pin-Priority: 1001
+
 # Set higher priority for MozillaTeamPPA firefox packages
 Package: firefox*
 Pin: release o=LP-PPA-mozillateam
