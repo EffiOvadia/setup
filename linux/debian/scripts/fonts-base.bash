@@ -2,49 +2,43 @@
 
 # Terminal fonts (monospaced, coding oriented)
 fonts=(
-    fonts-firacode
-    fonts-anonymous-pro
-    fonts-inconsolata
     fonts-hack
     fonts-proggy
+    fonts-firacode
+    fonts-inconsolata
     fonts-cascadia-code
+    fonts-anonymous-pro
     fonts-jetbrains-mono
     fonts-mononoki
     fonts-powerline
     fonts-terminus
     fonts-ibm-plex
-    )
-sudo dpkg -s "${fonts[@]}" &> /dev/null || sudo apt install -y "${fonts[@]}"
-
-# General use fonts
-general_fonts=(
-    ttf-mscorefonts-installer
-    fonts-noto-hinted
     fonts-noto-cjk
+    fonts-noto-hinted
     fonts-noto-color-emoji
     fonts-culmus-fancy
+    fonts-sil-ezra
     fonts-sil-charis
     fonts-sil-doulos
-    fonts-sil-gentium
-    fonts-sil-ezra
     fonts-sil-lateef
+    fonts-sil-gentium
     fonts-sil-scheherazade
     fonts-sil-abyssinica
     fonts-sil-andika
     fonts-dejavu
-    fonts-liberation
     fonts-lato
-    fonts-ubuntu
-    fonts-droid-fallback
-    texlive-fonts-extra
-    ttf-bitstream-vera
     fonts-agave
+    fonts-ubuntu
     fonts-roboto
     fonts-open-sans
+    fonts-liberation
+    fonts-droid-fallback  
     fonts-freefont-ttf
     fonts-liberation2
     fonts-inter
+    texlive-fonts-extra
+    ttf-bitstream-vera
+    ttf-mscorefonts-installer
     typecatcher
     )
-# Install general use fonts
 sudo dpkg -s "${fonts[@]}" &> /dev/null || sudo apt install -y "${fonts[@]}"

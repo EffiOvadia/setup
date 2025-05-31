@@ -74,8 +74,6 @@ gsettings set org.gnome.shell.extensions.system-monitor show-download true
 # org.gnome.shell.extensions.workspace-indicator
 gsettings set org.gnome.shell.extensions.workspace-indicator embed-previews false
 ## ========================================================================== ##
-
-
 #gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
 # Make Dock Transparent
@@ -113,7 +111,7 @@ gsettings set org.gnome.desktop.interface text-scaling-factor 1.0
 gsettings set org.gnome.settings-daemon.plugins.power lid-close-ac-action 'suspend'
 # Disable Automatic Suspend on AC Power:
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
-
+## ========================================================================== ##
 PROFILE_ID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_ID/ audible-bell true
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_ID/ visible-name 'Effi'
