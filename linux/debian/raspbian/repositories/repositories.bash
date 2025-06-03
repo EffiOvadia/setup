@@ -4,6 +4,8 @@
 sudo dpkg -s apt-transport-tor   >& /dev/null || sudo apt install --assume-yes apt-transport-tor  
 # Install HTTPS ransport support for apt
 sudo dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes apt-transport-https 
+# Install Nala as a replacement for apt
+sudo dpkg -s nala >& /dev/null || sudo apt install --assume-yes nala -t bookworm-backports
 # delete old format sources.list 
 [ -f /etc/apt/sources.list ] && sudo rm -f /etc/apt/sources.list
 # Generate new format (deb822) sources file in /etc/apt/sources.list.d/
