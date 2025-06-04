@@ -18,7 +18,7 @@ $Apps =
   [PSCustomObject]@{Name='Twitter'; ID='9E2F88E3.TWITTER_wgeqdkkx372wm'}
   [PSCustomObject]@{Name='LocalSend'; ID='LocalSend.LocalSend'}
   #[PSCustomObject]@{Name='WeChat'; ID='Tencent.WeChat'}
-  [PSCustomObject]@{Name='LINE'; ID='LINE.LINE'}
+  #[PSCustomObject]@{Name='LINE'; ID='LINE.LINE'}
   )
 
 foreach ($App in $Apps) 

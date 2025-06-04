@@ -10,10 +10,10 @@ $Apps =
   [PSCustomObject]@{Name='PowerShell'; ID='Microsoft.PowerShell'}
   [PSCustomObject]@{Name='Windows Terminal'; ID='Microsoft.WindowsTerminal'}
   [PSCustomObject]@{Name='Midnight Commander'; ID='GNU.MidnightCommander'}
-  [PSCustomObject]@{Name='GitHub Desktop'; ID='GitHub.GitHubDesktop'}
+  #[PSCustomObject]@{Name='GitHub Desktop'; ID='GitHub.GitHubDesktop'}
   [PSCustomObject]@{Name='VSCode'; ID='Microsoft.VisualStudioCode'}
-  [PSCustomObject]@{Name='VSCodium'; ID='VSCodium.VSCodium'}
-  [PSCustomObject]@{Name='Cygwin'; ID='Cygwin.Cygwin'}
+  #[PSCustomObject]@{Name='VSCodium'; ID='VSCodium.VSCodium'}
+  #[PSCustomObject]@{Name='Cygwin'; ID='Cygwin.Cygwin'}
   [PSCustomObject]@{Name='Neovim'; ID='Neovim.Neovim'}
   [PSCustomObject]@{Name='WinSCP'; ID='WinSCP.WinSCP'}
   [PSCustomObject]@{Name='PuTTY'; ID='PuTTY.PuTTY'}
@@ -22,17 +22,17 @@ $Apps =
   [PSCustomObject]@{Name='VIM'; ID='vim.vim'}
   [PSCustomObject]@{Name='Git'; ID='Git.Git'}
   [PSCustomObject]@{Name='7zip'; ID='7zip.7zip'}
-  [PSCustomObject]@{Name='Emacs'; ID='GNU.Emacs'}
-  [PSCustomObject]@{Name='Yazi'; ID='sxyazi.yazi'}
-  [PSCustomObject]@{Name='Helix'; ID='Helix.Helix'}
-  [PSCustomObject]@{Name='GitHub.cli'; ID='GitHub.cli'}
-  [PSCustomObject]@{Name='Warp Terminal'; ID='Warp.Warp'}
-  [PSCustomObject]@{Name='Lazygit'; ID='JesseDuffield.lazygit'} 
-  [PSCustomObject]@{Name='FarManager'; ID='FarManager.FarManager'}
-  [PSCustomObject]@{Name='ImageMagick'; ID='ImageMagick.ImageMagick'}
-  [PSCustomObject]@{Name='Wireshark'; ID='WiresharkFoundation.Wireshark'}
-  [PSCustomObject]@{Name='VMware Workstation Pro'; ID='VMware.WorkstationPro'}
-  [PSCustomObject]@{Name='VirtualBox'; ID='Oracle.VirtualBox'}
+  #[PSCustomObject]@{Name='Emacs'; ID='GNU.Emacs'}
+  #[PSCustomObject]@{Name='Yazi'; ID='sxyazi.yazi'}
+  #[PSCustomObject]@{Name='Helix'; ID='Helix.Helix'}
+  #[PSCustomObject]@{Name='GitHub.cli'; ID='GitHub.cli'}
+  #[PSCustomObject]@{Name='Warp Terminal'; ID='Warp.Warp'}
+  #[PSCustomObject]@{Name='Lazygit'; ID='JesseDuffield.lazygit'} 
+  #[PSCustomObject]@{Name='FarManager'; ID='FarManager.FarManager'}
+  #[PSCustomObject]@{Name='ImageMagick'; ID='ImageMagick.ImageMagick'}
+  #[PSCustomObject]@{Name='Wireshark'; ID='WiresharkFoundation.Wireshark'}
+  #[PSCustomObject]@{Name='VMware Workstation Pro'; ID='VMware.WorkstationPro'}
+  #[PSCustomObject]@{Name='VirtualBox'; ID='Oracle.VirtualBox'}
   )
 
 foreach ($App in $Apps) 
