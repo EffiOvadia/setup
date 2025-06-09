@@ -2,7 +2,9 @@
 
 # Add FlatPak support
 sudo apt update
-sudo apt install -y flatpak gnome-software-plugin-flatpak gnome-software
+sudo apt install -y flatpak 
+#sudo apt install -y gnome-software-plugin-flatpak gnome-software
+
 # Add the Flathub repository
 #flatpak remote-delete --force flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 ## Some usefull FlatPak apps to install
+sudo flatpak install -y flathub io.neovim.nvim                # Neovim
 sudo flatpak install -y flathub com.rustdesk.RustDesk         # RustDesk
 sudo flatpak install -y flathub org.localsend.localsend_app   # LocalSend 
 sudo flatpak install -y flathub us.zoom.Zoom                  # Zoom
