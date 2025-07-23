@@ -70,8 +70,8 @@ sudo ufw default allow outgoing
 sudo ufw default deny incoming
 sudo ufw app update all 
 #sudo ufw allow from any to 0.0.0.0/0 app  DNS       comment "DNS"
-sudo ufw allow from any to 0.0.0.0/0 app  NFSv4     comment "NFSv4"
-sudo ufw allow from any to 0.0.0.0/0 app  Samba     comment "Samba"
+#sudo ufw allow from any to 0.0.0.0/0 app  NFSv4     comment "NFSv4"
+#sudo ufw allow from any to 0.0.0.0/0 app  Samba     comment "Samba"
 sudo ufw allow from any to 0.0.0.0/0 app  OpenSSH   comment "OpenSSH"
 #sudo ufw allow from any to 0.0.0.0/0 app  OpenVPN   comment "OpenVPN"
 #sudo ufw allow from any to 0.0.0.0/0 app  RustDesk  comment "RustDesk"
