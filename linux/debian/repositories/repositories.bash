@@ -12,8 +12,8 @@ sudo \cat > /etc/apt/sources.list.d/debian.sources <<-EOF
 Name: $(lsb_release -sd) - Main
 Enabled: yes
 Types: deb 
-URIs: https://deb.debian.org/debian/ 
-Suites: $(lsb_release -sc) $(lsb_release -sc)-updates $(lsb_release -sc)-backports
+URIs: https://deb.debian.org/debian/ http://debian.interhost.co.il/debian/
+Suites: $(lsb_release -sc) $(lsb_release -sc)-updates $(lsb_release -sc)-proposed-updates $(lsb_release -sc)-backports
 Components: main contrib non-free non-free-firmware
 Architectures: $(dpkg --print-architecture)
 Signed-By: 

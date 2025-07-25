@@ -12,7 +12,7 @@ sudo \cat > /etc/apt/sources.list.d/debian.sources <<-EOF
 Name: Debian SID (Unstable)
 Enabled: yes
 Types: deb
-URIs: https://deb.debian.org/debian/ 
+URIs: https://deb.debian.org/debian/ http://debian.interhost.co.il/debian/
 Suites: unstable
 Components: main contrib non-free non-free-firmware
 Architectures: $(dpkg --print-architecture)
