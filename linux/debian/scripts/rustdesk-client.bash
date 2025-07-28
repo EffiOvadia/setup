@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+ 
 # Create directories if they don't exist
 sudo mkdir -p ~/.config/rustdesk
 sudo mkdir -p ~/.var/app/com.rustdesk.RustDesk/config/rustdesk
