@@ -99,3 +99,19 @@ Set-Service -Name "Connected User Experiences and Telemetry" -Status Stopped -St
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" AllowTelemetry -Value 0
 # Enable sudo command in PowerShell (inline mode)
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Sudo" Enabled -Value 3
+
+
+# Enable sudo command in PowerShell (inline mode)
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Sudo" Enabled -Value 3
+
+
+# Enable new NVMe driver (nvmedisk.sys) in Windows 11
+# Using Set-ItemProperty as requested
+
+$basePath = "HKLM:\SYSTEM\CurrentControlSet\Policies\Microsoft\FeatureManagement\Overrides"
+# Create the key if it doesn't exist
+if (-not (Test-Path $basePath)) {New-Item -Path $basePath -Force | Out-Null}
+# Apply the overrides
+Set-ItemProperty -Path $basePath -Name "735209102" -Value 1 -Type DWord
+Set-ItemProperty -Path $basePath -Name "1853569164" -Value 1 -Type DWord
+Set-ItemProperty -Path $basePath -Name "156965516" -Value 1 -Type DWord
