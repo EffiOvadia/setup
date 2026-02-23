@@ -16,7 +16,6 @@ fonts=(
     fonts-noto-cjk
     fonts-noto-hinted
     fonts-noto-color-emoji
-    fonts-culmus-fancy
     fonts-sil-ezra
     fonts-sil-charis
     fonts-sil-doulos
@@ -42,3 +41,4 @@ fonts=(
     typecatcher
     )
 sudo dpkg -s "${fonts[@]}" &> /dev/null || sudo apt install -y "${fonts[@]}"
+
