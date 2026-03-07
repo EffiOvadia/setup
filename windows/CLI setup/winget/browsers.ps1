@@ -17,7 +17,7 @@ $Apps =
   #[PSCustomObject]@{Name='Mozilla SeaMonkey'; ID='Mozilla.SeaMonkey'}
   [PSCustomObject]@{Name='Google Chrome Browser'; ID='Google.Chrome'}
   #[PSCustomObject]@{Name='LibreWolf Browser'; ID='LibreWolf.LibreWolf'} 
-  #[PSCustomObject]@{Name='Vivaldi Browser'; ID='VivaldiTechnologies.Vivaldi'}
+  [PSCustomObject]@{Name='Vivaldi Browser'; ID='Vivaldi.Vivaldi'}
   #[PSCustomObject]@{Name='BetterBird Mail Client'; ID='Betterbird.Betterbird'}
   [PSCustomObject]@{Name='Thunderbird Mail Client'; ID='Mozilla.Thunderbird'} 
   )

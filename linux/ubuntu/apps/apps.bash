@@ -48,7 +48,7 @@ service fwupd start && fwupdmgr refresh && fwupdmgr get-devices && fwupdmgr get-
 #apps=( tlp tlp-rdw )
 #sudo apt install -y ${apps[@]}
 #systemctl enable tlp && systemctl start tlp
-#tlp-stat
+tlp-stat
 cpufreq-set -g powersave
 
 #kleopatra

@@ -12,6 +12,7 @@ $Apps =
   #[PSCustomObject]@{Name='HexChat'; ID='HexChat.HexChat'}
   [PSCustomObject]@{Name='Teams'; ID='Microsoft.Teams'}
   [PSCustomObject]@{Name='Zoom'; ID='Zoom.Zoom'}
+  [PSCustomObject]@{Name='Session'; ID='Session.Session'}
   [PSCustomObject]@{Name='Signal'; ID='OpenWhisperSystems.Signal'}
   [PSCustomObject]@{Name='Telegram'; ID='Telegram.TelegramDesktop'}
   [PSCustomObject]@{Name='Facebook'; ID='FACEBOOK.FACEBOOK_8xx8rvfyw5nnt'}

@@ -41,8 +41,7 @@ if ($FWrule)
         -Action Allow `
         -LocalPort 22 `
         -Enable True 
-  } 
-  else 
+  } else 
   {
     $FW_RuleParameters = 
       @{
