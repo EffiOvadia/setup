@@ -22,7 +22,7 @@ sudo apt install -y ${apps[@]}
 #flatpak remote-add --if-not-exists flathub https://flathub.org/
 #-----------------------------------------------------------------------
 apps=( putty gnome-terminal tmux vim neovim screen mc lfm htop \
-  dnstop iftop iotop zsh powerline cowsay fortune ripgrep tldr \
+  dnstop iftop iotop zsh powerline cowsay fortune ripgrep \
   bat fzf jq zoxide hyperfine glances btop mutt nmap irssi \
   elinks lynx ncal dateutils ncat rxvt-unicode )
 sudo apt install -y ${apps[@]}
