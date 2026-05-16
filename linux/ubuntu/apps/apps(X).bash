@@ -12,7 +12,7 @@ sudo apt install -y ${apps[@]}
 apps=( onlyoffice-desktopeditors libreoffice )
 sudo apt install -y ${apps[@]}
 # Install editors and IDEs
-apps=( code codium vim-gtk3 helix )
+apps=( code codium vim-gtk3 )
 sudo apt install -y ${apps[@]}
 # Install browsers
 apps=( brave-browser google-chrome-stable microsoft-edge-stable vivaldi-stable torbrowser-launcher opera-stable )
@@ -21,7 +21,7 @@ sudo apt install -y ${apps[@]}
 apps=( signal-desktop telegram hexchat session-desktop )
 sudo apt install -y ${apps[@]}
 # Install gereral tools
-apps=( remmina keepassxc solaar balena-etcher )
+apps=( remmina keepassxc solaar )
 sudo apt install -y ${apps[@]}
 # Install terminal emulators and shells
 apps=( wezterm warp tabby-terminal )
