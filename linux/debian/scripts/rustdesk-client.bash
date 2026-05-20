@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
  
+sudo apt-get update && sudo apt-get install -y curl jq ca-certificates 
+url=$(curl -fsSL https://api.github.com/repos/rustdesk/rustdesk/releases/latest | jq -r '.assets[] | select(.name | test("x86_64\\.deb$")) | .browser_download_url' | head -n1) 
+curl -fL "$url" -o /tmp/rustdesk-latest.deb 
+sudo apt install -y /tmp/rustdesk-latest.deb
+sudo systemctl enable --now rustdesk
+
 # Create directories if they don't exist
 sudo mkdir -p ~/.config/rustdesk
 sudo mkdir -p ~/.var/app/com.rustdesk.RustDesk/config/rustdesk
