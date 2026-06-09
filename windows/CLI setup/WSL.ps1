@@ -37,7 +37,7 @@ If ($Admin)
         #[PSCustomObject]@{Name='Fedora Linux 42'; ID='FedoraLinux-42'}
         #[PSCustomObject]@{Name='AlmaLinux OS Kitten 10'; ID='AlmaLinux-Kitten-10'}
         #[PSCustomObject]@{Name='Arch Linux'; ID='archlinux'}   
-        #/ [PSCustomObject]@{Name='Oracle Linux 9.1'; ID='OracleLinux_9_1'}
+        #[PSCustomObject]@{Name='Oracle Linux 9.1'; ID='OracleLinux_9_1'}
       )
 
     foreach ( $Dist in $Distros ) { wsl --install --no-launch -d $Dist.ID } 
