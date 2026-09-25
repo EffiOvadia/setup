@@ -26,6 +26,10 @@ sudo apt install -y ${apps[@]}
 # Install terminal emulators and shells
 apps=( wezterm warp tabby-terminal )
 sudo apt install -y ${apps[@]}
+
+# Install VPN clients
+apps=( ivpn ivpn-ui mullvad-vpn tailscale nym-vpn-app nym-vpnc )
+sudo apt install -y ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso)
 sudo apt install -y ${apps[@]}
