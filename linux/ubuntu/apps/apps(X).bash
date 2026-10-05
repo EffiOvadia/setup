@@ -8,12 +8,24 @@ sudo apt install -y ${apps[@]}
 # Install VPN and network tools
 apps=( openvpn wireguard network-manager-openconnect-gnome openconnect )
 sudo apt install -y ${apps[@]}
-# Install Office and document editors
+# Install Office suits and document editors
 apps=( onlyoffice-desktopeditors libreoffice )
 sudo apt install -y ${apps[@]}
 # Install editors and IDEs
-apps=( code codium vim-gtk3 )
+apps=( code codium antigravity vim-gtk3 )
 sudo apt install -y ${apps[@]}
+code --install-extension GitHub.copilot
+code --install-extension GitHub.copilot-chat
+# Install AI Chat bots and tools
+apps=( npm claude-desktop chatgpt grok-bot cursor  )
+sudo apt install -y ${apps[@]}
+npm install -g @openai/codex
+npm install -g @github/copilot
+npm install -g @google/gemini-cli
+npm install -g @xai-official/grok
+npm install -g @anthropic-ai/claude-code
+# Chinese AI tools
+npm install -g @vegamo/deepcode-cli
 # Install browsers
 apps=( brave-browser google-chrome-stable microsoft-edge-stable vivaldi-stable torbrowser-launcher opera-stable )
 sudo apt install -y ${apps[@]}
