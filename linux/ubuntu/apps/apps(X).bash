@@ -25,6 +25,7 @@ npm install -g @google/gemini-cli
 npm install -g @xai-official/grok
 npm install -g @anthropic-ai/claude-code
 # Chinese AI tools
+npm install -g npm@12.2.0
 npm install -g @vegamo/deepcode-cli
 # Install browsers
 apps=( brave-browser google-chrome-stable microsoft-edge-stable vivaldi-stable torbrowser-launcher opera-stable )
@@ -40,7 +41,7 @@ apps=( wezterm warp tabby-terminal )
 sudo apt install -y ${apps[@]}
 
 # Install VPN clients
-apps=( ivpn ivpn-ui mullvad-vpn tailscale nym-vpn-app nym-vpnc )
+apps=( ivpn-ui mullvad-vpn tailscale nym-vpn-app nym-vpnc )
 sudo apt install -y ${apps[@]}
 #-----------------------------------------------------------------------
 apps=( virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso)

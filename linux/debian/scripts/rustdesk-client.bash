@@ -4,7 +4,7 @@ sudo apt-get update && sudo apt-get install -y curl jq ca-certificates
 url=$(curl -fsSL https://api.github.com/repos/rustdesk/rustdesk/releases/latest | jq -r '.assets[] | select(.name | test("x86_64\\.deb$")) | .browser_download_url' | head -n1) 
 curl -fL "$url" -o /tmp/rustdesk-latest.deb 
 sudo apt install -y /tmp/rustdesk-latest.deb
-sudo systemctl enable --now rustdesk
+
 
 # Create directories if they don't exist
 sudo mkdir -p ~/.config/rustdesk
@@ -33,3 +33,5 @@ EOF
 
 [ -f /etc/gdm3/custom.conf ] && sudo sed -i 's/[# ]*WaylandEnable=.*/WaylandEnable=false/g' /etc/gdm3/custom.conf ||
   sudo printf "[daemon]\nWaylandEnable=false" | sudo tee /etc/gdm3/custom.conf >/dev/null
+
+sudo systemctl enable --now rustdesk
