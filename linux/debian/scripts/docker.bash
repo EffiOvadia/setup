@@ -10,3 +10,5 @@ apt update
 apps=( docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin )
 apt install ${apps[@]}
 docker run hello-world
+
+sudo usermod -aG docker "$USER"
