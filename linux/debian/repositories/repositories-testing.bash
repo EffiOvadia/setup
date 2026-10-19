@@ -9,7 +9,7 @@ sudo dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes a
 # Generate new format (deb822) sources file in /etc/apt/sources.list.d/w
 sudo \cat > /etc/apt/sources.list.d/debian.sources <<-EOF
 #! Debian Repositories
-Name: Debian Testing - Main
+X-Repolib-Name: $(. /etc/os-release && echo $PRETTY_NAME)
 Enabled: yes
 Types: deb 
 URIs: https://deb.debian.org/debian/ 
@@ -1194,7 +1194,7 @@ Signed-By:
 
 
 #! Debian Security Updates Repositories
-Name: $(lsb_release -sd) - Security
+X-Repolib-Name: $(. /etc/os-release && echo $PRETTY_NAME)
 Enabled: yes
 Types: deb
 URIs: https://security.debian.org/debian-security

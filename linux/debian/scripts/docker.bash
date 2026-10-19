@@ -12,3 +12,13 @@ apt install ${apps[@]}
 docker run hello-world
 
 sudo usermod -aG docker "$USER"
+
+id
+getent group docker
+ls -l /var/run/docker.sock
+
+
+whoami
+id
+getent group docker
+ls -ln /var/run/docker.sock

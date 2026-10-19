@@ -9,7 +9,7 @@ sudo dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes a
 # Generate new format (deb822) sources file in /etc/apt/sources.list.d/
 sudo \cat > /etc/apt/sources.list.d/debian.sources <<-EOF
 #! Debian Repositories
-Name: Debian SID (Unstable)
+X-Repolib-Name: $(. /etc/os-release && echo $PRETTY_NAME)
 Enabled: yes
 Types: deb
 URIs: https://deb.debian.org/debian/ http://debian.interhost.co.il/debian/

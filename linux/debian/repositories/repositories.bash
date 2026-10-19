@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
-# Install TOR transport support for apt
-sudo dpkg -s apt-transport-tor   >& /dev/null || sudo apt install --assume-yes apt-transport-tor  
 # Install HTTPS ransport support for apt
 sudo dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes apt-transport-https 
 # delete old format sources.list 
 [ -f /etc/apt/sources.list ] && sudo rm -f /etc/apt/sources.list
 # Generate new format (deb822) sources file in /etc/apt/sources.list.d/
+suite=$(. /etc/os-release && echo $VERSION_CODENAME) 
+#suite=$(lsb_release -sc)
 sudo \cat > /etc/apt/sources.list.d/debian.sources <<-EOF
 #! Debian Repositories
-Name: $(lsb_release -sd) - Main
+X-Repolib-Name: $(. /etc/os-release && echo $PRETTY_NAME)
 Enabled: yes
 Types: deb 
 URIs: https://deb.debian.org/debian/ http://debian.interhost.co.il/debian/
-Suites: $(lsb_release -sc) $(lsb_release -sc)-updates $(lsb_release -sc)-proposed-updates $(lsb_release -sc)-backports
+Suites: $suite $suite-updates $suite-proposed-updates $suite-backports
 Components: main contrib non-free non-free-firmware
 Architectures: $(dpkg --print-architecture)
 Signed-By: 
@@ -1193,11 +1193,11 @@ Signed-By:
  -----END PGP PUBLIC KEY BLOCK-----
 
 #! Debian Security Updates Repositories
-Name: $(lsb_release -sd) - Security
+X-Repolib-Name: $(. /etc/os-release && echo $PRETTY_NAME)
 Enabled: yes
 Types: deb 
 URIs: https://security.debian.org/debian-security
-Suites: $(lsb_release -sc)-security
+Suites: $suite-security
 Components: main contrib non-free non-free-firmware
 Architectures: $(dpkg --print-architecture)
 Signed-By: 

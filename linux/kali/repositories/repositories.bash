@@ -7,13 +7,14 @@ sudo dpkg -s apt-transport-https >& /dev/null || sudo apt install --assume-yes a
 # delete old format sources.list 
 [ -f /etc/apt/sources.list ] && sudo rm -f /etc/apt/sources.list
 # Generate new format (deb822) sources file in /etc/apt/sources.list.d/
+suite=$(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
 sudo \cat > /etc/apt/sources.list.d/kali.sources <<-EOF
 #! Kali Repositories
-Name: $(lsb_release -sd)
+X-Repolib-Name: $(. /etc/os-release && echo $PRETTY_NAME)
 Enabled: yes
 Types: deb
 URIs: https://http.kali.org/kali
-Suites: $(lsb_release -sc)
+Suites: $suite
 Components: main contrib non-free non-free-firmware 
 Architectures: $(dpkg --print-architecture)
 Signed-By: 
