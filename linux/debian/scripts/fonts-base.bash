@@ -31,14 +31,19 @@ fonts=(
     fonts-roboto
     fonts-open-sans
     fonts-liberation
-    fonts-droid-fallback  
+    fonts-droid-fallback
     fonts-freefont-ttf
     fonts-liberation2
     fonts-inter
+    fonts-3270
+    fonts-mplus
+    fonts-monoid
+    fonts-hermit
     texlive-fonts-extra
     ttf-bitstream-vera
     ttf-mscorefonts-installer
     typecatcher
-    )
-sudo dpkg -s "${fonts[@]}" &> /dev/null || sudo apt install -y "${fonts[@]}"
+)
+
+dpkg -s "${fonts[@]}" &>/dev/null || sudo apt install -y "${fonts[@]}"
 
